@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1kpfNgkqKEU7BV9QTL3eRUwZIht" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="JUnit.AppTest.shouldAnswerWithTrue">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.learn.App" />
+      <module name="myapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learn" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.AppTest" />
+      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="" />
+      <created>1606402415036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606402415036</updated>
+      <workItem from="1606402419284" duration="3945000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="247" y="165" key="#Menus_and_Toolbars" timestamp="1606403096094">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="247" y="165" key="#Menus_and_Toolbars/0.25.1680.956@0.25.1680.956" timestamp="1606403096094" />
+    <state x="126" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606403181210">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="126" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1680.956@0.25.1680.956" timestamp="1606403181210" />
+    <state x="250" y="222" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1606402836694">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="250" y="222" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.25.1680.956@0.25.1680.956" timestamp="1606402836694" />
+    <state width="798" height="247" key="GridCell.Tab.0.bottom" timestamp="1606403638473">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.bottom/0.25.1680.956@0.25.1680.956" timestamp="1606403638473" />
+    <state width="798" height="247" key="GridCell.Tab.0.center" timestamp="1606403638472">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.center/0.25.1680.956@0.25.1680.956" timestamp="1606403638472" />
+    <state width="798" height="247" key="GridCell.Tab.0.left" timestamp="1606403638471">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.left/0.25.1680.956@0.25.1680.956" timestamp="1606403638471" />
+    <state width="798" height="247" key="GridCell.Tab.0.right" timestamp="1606403638472">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.right/0.25.1680.956@0.25.1680.956" timestamp="1606403638472" />
+    <state x="170" y="139" key="SettingsEditor" timestamp="1606405235392">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="170" y="139" key="SettingsEditor/0.25.1680.956@0.25.1680.956" timestamp="1606405235392" />
+    <state x="150" y="239" width="540" height="524" key="StructurePopup" timestamp="1606405266201">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="150" y="239" width="540" height="524" key="StructurePopup/0.25.1680.956@0.25.1680.956" timestamp="1606405266201" />
+    <state x="97" y="332" key="com.intellij.ide.util.TipDialog" timestamp="1606402610499">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="97" y="332" key="com.intellij.ide.util.TipDialog/0.25.1680.956@0.25.1680.956" timestamp="1606402610499" />
+    <state x="6" y="90" width="827" height="825" key="find.popup" timestamp="1606404555033">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="6" y="90" width="827" height="825" key="find.popup/0.25.1680.956@0.25.1680.956" timestamp="1606404555033" />
+    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1606404697374">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup/0.25.1680.956@0.25.1680.956" timestamp="1606404697374" />
+  </component>
+</project>
