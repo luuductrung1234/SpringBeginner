@@ -1,23 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="" />
+    <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/App.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="myapp" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1kpfNgkqKEU7BV9QTL3eRUwZIht" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -26,13 +68,22 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.shouldAnswerWithTrue">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.learn.services" />
+      <recent name="com.learn.repositories" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.learn.App" />
       <module name="myapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.learn.*" />
+          <option name="PATTERN" value="com.learn.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -44,7 +95,7 @@
       <module name="myapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.learn.*" />
+          <option name="PATTERN" value="com.learn.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -58,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -86,6 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606402415036</updated>
       <workItem from="1606402419284" duration="3945000" />
+      <workItem from="1606750589819" duration="7067000" />
     </task>
     <servers />
   </component>
@@ -105,41 +157,85 @@
       <screen x="0" y="25" width="1680" height="956" />
     </state>
     <state x="250" y="222" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.25.1680.956@0.25.1680.956" timestamp="1606402836694" />
-    <state width="798" height="247" key="GridCell.Tab.0.bottom" timestamp="1606403638473">
+    <state x="233" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1606922831203">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.bottom/0.25.1680.956@0.25.1680.956" timestamp="1606403638473" />
-    <state width="798" height="247" key="GridCell.Tab.0.center" timestamp="1606403638472">
+    <state x="233" y="223" key="#com.intellij.ide.util.MemberChooser/0.25.1680.956@0.25.1680.956" timestamp="1606922831203" />
+    <state x="191" y="366" width="457" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606922786383">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.center/0.25.1680.956@0.25.1680.956" timestamp="1606403638472" />
-    <state width="798" height="247" key="GridCell.Tab.0.left" timestamp="1606403638471">
+    <state x="191" y="366" width="457" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.25.1680.956@0.25.1680.956" timestamp="1606922786383" />
+    <state width="798" height="305" key="GridCell.Tab.-1.bottom" timestamp="1606923181566">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.left/0.25.1680.956@0.25.1680.956" timestamp="1606403638471" />
-    <state width="798" height="247" key="GridCell.Tab.0.right" timestamp="1606403638472">
+    <state width="798" height="305" key="GridCell.Tab.-1.bottom/0.25.1680.956@0.25.1680.956" timestamp="1606923181566" />
+    <state width="798" height="305" key="GridCell.Tab.-1.center" timestamp="1606923181565">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.right/0.25.1680.956@0.25.1680.956" timestamp="1606403638472" />
-    <state x="170" y="139" key="SettingsEditor" timestamp="1606405235392">
+    <state width="798" height="305" key="GridCell.Tab.-1.center/0.25.1680.956@0.25.1680.956" timestamp="1606923181565" />
+    <state width="798" height="305" key="GridCell.Tab.-1.left" timestamp="1606923181564">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state x="170" y="139" key="SettingsEditor/0.25.1680.956@0.25.1680.956" timestamp="1606405235392" />
+    <state width="798" height="305" key="GridCell.Tab.-1.left/0.25.1680.956@0.25.1680.956" timestamp="1606923181564" />
+    <state width="798" height="305" key="GridCell.Tab.-1.right" timestamp="1606923181565">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="305" key="GridCell.Tab.-1.right/0.25.1680.956@0.25.1680.956" timestamp="1606923181565" />
+    <state width="798" height="247" key="GridCell.Tab.0.bottom" timestamp="1606923963101">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.bottom/0.25.1680.956@0.25.1680.956" timestamp="1606923963101" />
+    <state width="798" height="247" key="GridCell.Tab.0.center" timestamp="1606923963100">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.center/0.25.1680.956@0.25.1680.956" timestamp="1606923963100" />
+    <state width="798" height="247" key="GridCell.Tab.0.left" timestamp="1606923963099">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.left/0.25.1680.956@0.25.1680.956" timestamp="1606923963099" />
+    <state width="798" height="247" key="GridCell.Tab.0.right" timestamp="1606923963100">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="247" key="GridCell.Tab.0.right/0.25.1680.956@0.25.1680.956" timestamp="1606923963100" />
+    <state width="798" height="305" key="GridCell.Tab.1.bottom" timestamp="1606923171289">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="305" key="GridCell.Tab.1.bottom/0.25.1680.956@0.25.1680.956" timestamp="1606923171289" />
+    <state width="798" height="305" key="GridCell.Tab.1.center" timestamp="1606923171288">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="305" key="GridCell.Tab.1.center/0.25.1680.956@0.25.1680.956" timestamp="1606923171288" />
+    <state width="798" height="305" key="GridCell.Tab.1.left" timestamp="1606923171287">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="305" key="GridCell.Tab.1.left/0.25.1680.956@0.25.1680.956" timestamp="1606923171287" />
+    <state width="798" height="305" key="GridCell.Tab.1.right" timestamp="1606923171288">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state width="798" height="305" key="GridCell.Tab.1.right/0.25.1680.956@0.25.1680.956" timestamp="1606923171288" />
+    <state x="170" y="139" key="SettingsEditor" timestamp="1606923729583">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="170" y="139" key="SettingsEditor/0.25.1680.956@0.25.1680.956" timestamp="1606923729583" />
     <state x="150" y="239" width="540" height="524" key="StructurePopup" timestamp="1606405266201">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
     <state x="150" y="239" width="540" height="524" key="StructurePopup/0.25.1680.956@0.25.1680.956" timestamp="1606405266201" />
-    <state x="97" y="332" key="com.intellij.ide.util.TipDialog" timestamp="1606402610499">
+    <state x="97" y="332" key="com.intellij.ide.util.TipDialog" timestamp="1606750598662">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state x="97" y="332" key="com.intellij.ide.util.TipDialog/0.25.1680.956@0.25.1680.956" timestamp="1606402610499" />
-    <state x="6" y="90" width="827" height="825" key="find.popup" timestamp="1606404555033">
+    <state x="97" y="332" key="com.intellij.ide.util.TipDialog/0.25.1680.956@0.25.1680.956" timestamp="1606750598662" />
+    <state x="6" y="90" width="827" height="825" key="find.popup" timestamp="1606922673058">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state x="6" y="90" width="827" height="825" key="find.popup/0.25.1680.956@0.25.1680.956" timestamp="1606404555033" />
-    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1606404697374">
+    <state x="6" y="90" width="827" height="825" key="find.popup/0.25.1680.956@0.25.1680.956" timestamp="1606922673058" />
+    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1606923763538">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup/0.25.1680.956@0.25.1680.956" timestamp="1606404697374" />
+    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup/0.25.1680.956@0.25.1680.956" timestamp="1606923763538" />
+    <state x="42" y="191" key="spring file set editor" timestamp="1606835234629">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="42" y="191" key="spring file set editor/0.25.1680.956@0.25.1680.956" timestamp="1606835234629" />
   </component>
 </project>
