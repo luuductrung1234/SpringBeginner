@@ -1,6 +1,9 @@
 package com.learn.services;
 
 public class YourService {
+
+    // property manual-injection
+    // require setter & getter for property
     private String name;
 
     public YourService() {

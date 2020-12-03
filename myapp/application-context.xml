@@ -7,7 +7,9 @@
         <constructor-arg name="myRepository" ref="repository"/>
     </bean>
 
-    <bean id="yourService" class="com.learn.services.YourService" scope="prototype" />
+    <bean id="yourService" class="com.learn.services.YourService" scope="prototype">
+        <property name="name" value="Thomas Edison"/>
+    </bean>
 
     <bean id="repository" class="com.learn.repositories.MyRepository"/>
 

@@ -1,8 +1,8 @@
 package com.learn.repositories;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class MyRepository {
     public void doQuery() {
         System.out.println("Doing some query.");

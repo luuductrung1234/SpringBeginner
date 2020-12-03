@@ -5,6 +5,7 @@ import com.learn.repositories.MyRepository;
 public class MyService {
     private MyRepository myRepository;
 
+    // constructor manual-injection
     public MyService(MyRepository myRepository) {
         this.myRepository = myRepository;
     }

@@ -1,19 +1,19 @@
 package com.learn.services;
 
 import com.learn.repositories.MyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class HerService {
     private final MyRepository myRepository;
 
+    // constructor auto-injection
     public HerService(MyRepository myRepository) {
         this.myRepository = myRepository;
     }
 
     public void doSomething() {
-        System.out.println("Doing her job!");
+        System.out.println("She doing her job!");
         myRepository.doQuery();
     }
 }
