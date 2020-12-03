@@ -1,12 +1,12 @@
 package com.learn.services;
 
-import com.learn.repositories.MyRepository;
+import com.learn.repositories.MyRepositoryImpl;
 
 public class MyService {
-    private MyRepository myRepository;
+    private MyRepositoryImpl myRepository;
 
     // constructor manual-injection
-    public MyService(MyRepository myRepository) {
+    public MyService(MyRepositoryImpl myRepository) {
         this.myRepository = myRepository;
     }
 

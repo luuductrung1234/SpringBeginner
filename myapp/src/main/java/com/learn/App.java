@@ -1,10 +1,7 @@
 package com.learn;
 
 import com.learn.configs.AppConfig;
-import com.learn.services.HerService;
-import com.learn.services.HisService;
-import com.learn.services.MyService;
-import com.learn.services.YourService;
+import com.learn.services.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,8 +12,8 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  */
 public class App {
     public static void main(String[] args) {
-        //RunFirstContext();
-        //RunSecondContext();
+        RunFirstContext();
+        RunSecondContext();
         RunThirdContext();
     }
 
@@ -43,10 +40,10 @@ public class App {
     public static void RunSecondContext() {
         ApplicationContext secondContext = new ClassPathXmlApplicationContext("application-context.xml");
 
-        HisService hisService = secondContext.getBean(HisService.class);
-        hisService.doSomething();
+        Service service = secondContext.getBean(HisService.class);
+        service.doSomething();
 
-        HerService herService = secondContext.getBean(HerService.class);
+        Service herService = secondContext.getBean(HerService.class);
         herService.doSomething();
     }
 
@@ -56,10 +53,13 @@ public class App {
     public static void RunThirdContext() {
         ApplicationContext thirdContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        HisService hisService = thirdContext.getBean(HisService.class);
-        hisService.doSomething();
+        Service service = thirdContext.getBean(HisService.class);
+        service.doSomething();
 
-        HerService herService = thirdContext.getBean(HerService.class);
+        Service herService = thirdContext.getBean(HerService.class);
         herService.doSomething();
+
+        Service theirService = thirdContext.getBean(TheirService.class);
+        theirService.doSomething();
     }
 }

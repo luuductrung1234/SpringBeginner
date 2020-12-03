@@ -11,6 +11,6 @@
         <property name="name" value="Thomas Edison"/>
     </bean>
 
-    <bean id="repository" class="com.learn.repositories.MyRepository"/>
+    <bean id="repository" class="com.learn.repositories.MyRepositoryImpl"/>
 
 </beans>

@@ -5,11 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/configs/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/repositories/MyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/repositories/MyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/HerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/services/HerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/HisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/services/HisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/MyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/services/MyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/YourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/services/YourService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +36,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -74,6 +75,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.learn.services" />
+      <recent name="com.learn.repositories" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.learn.services" />
       <recent name="com.learn.repositories" />
@@ -142,7 +147,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606402415036</updated>
       <workItem from="1606402419284" duration="3945000" />
-      <workItem from="1606750589819" duration="10134000" />
+      <workItem from="1606750589819" duration="12884000" />
     </task>
     <servers />
   </component>
@@ -162,14 +167,18 @@
       <screen x="0" y="25" width="1680" height="956" />
     </state>
     <state x="250" y="222" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.25.1680.956@0.25.1680.956" timestamp="1606402836694" />
-    <state x="233" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1606989262443">
+    <state x="233" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1607006856651">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state x="233" y="223" key="#com.intellij.ide.util.MemberChooser/0.25.1680.956@0.25.1680.956" timestamp="1606989262443" />
+    <state x="233" y="223" key="#com.intellij.ide.util.MemberChooser/0.25.1680.956@0.25.1680.956" timestamp="1607006856651" />
     <state x="191" y="366" width="457" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606922786383">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
     <state x="191" y="366" width="457" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.25.1680.956@0.25.1680.956" timestamp="1606922786383" />
+    <state x="21" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607006219002">
+      <screen x="0" y="25" width="1680" height="956" />
+    </state>
+    <state x="21" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1680.956@0.25.1680.956" timestamp="1607006219002" />
     <state width="798" height="305" key="GridCell.Tab.-1.bottom" timestamp="1606923181566">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
@@ -186,22 +195,22 @@
       <screen x="0" y="25" width="1680" height="956" />
     </state>
     <state width="798" height="305" key="GridCell.Tab.-1.right/0.25.1680.956@0.25.1680.956" timestamp="1606923181565" />
-    <state width="798" height="247" key="GridCell.Tab.0.bottom" timestamp="1606990865694">
+    <state width="798" height="247" key="GridCell.Tab.0.bottom" timestamp="1607007042569">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.bottom/0.25.1680.956@0.25.1680.956" timestamp="1606990865694" />
-    <state width="798" height="247" key="GridCell.Tab.0.center" timestamp="1606990865693">
+    <state width="798" height="247" key="GridCell.Tab.0.bottom/0.25.1680.956@0.25.1680.956" timestamp="1607007042569" />
+    <state width="798" height="247" key="GridCell.Tab.0.center" timestamp="1607007042568">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.center/0.25.1680.956@0.25.1680.956" timestamp="1606990865693" />
-    <state width="798" height="247" key="GridCell.Tab.0.left" timestamp="1606990865692">
+    <state width="798" height="247" key="GridCell.Tab.0.center/0.25.1680.956@0.25.1680.956" timestamp="1607007042568" />
+    <state width="798" height="247" key="GridCell.Tab.0.left" timestamp="1607007042567">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.left/0.25.1680.956@0.25.1680.956" timestamp="1606990865692" />
-    <state width="798" height="247" key="GridCell.Tab.0.right" timestamp="1606990865693">
+    <state width="798" height="247" key="GridCell.Tab.0.left/0.25.1680.956@0.25.1680.956" timestamp="1607007042567" />
+    <state width="798" height="247" key="GridCell.Tab.0.right" timestamp="1607007042568">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state width="798" height="247" key="GridCell.Tab.0.right/0.25.1680.956@0.25.1680.956" timestamp="1606990865693" />
+    <state width="798" height="247" key="GridCell.Tab.0.right/0.25.1680.956@0.25.1680.956" timestamp="1607007042568" />
     <state width="798" height="305" key="GridCell.Tab.1.bottom" timestamp="1606923171289">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
@@ -234,10 +243,10 @@
       <screen x="0" y="25" width="1680" height="956" />
     </state>
     <state x="6" y="90" width="827" height="825" key="find.popup/0.25.1680.956@0.25.1680.956" timestamp="1606922673058" />
-    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1606989584384">
+    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1607006986125">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
-    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup/0.25.1680.956@0.25.1680.956" timestamp="1606989584384" />
+    <state x="85" y="235" width="670" height="676" key="search.everywhere.popup/0.25.1680.956@0.25.1680.956" timestamp="1607006986125" />
     <state x="42" y="191" key="spring file set editor" timestamp="1606835234629">
       <screen x="0" y="25" width="1680" height="956" />
     </state>
