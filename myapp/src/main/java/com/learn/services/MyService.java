@@ -1,8 +1,10 @@
 package com.learn.services;
 
 import com.learn.repositories.MyRepositoryImpl;
+import org.springframework.stereotype.Service;
 
-public class MyService {
+@Service
+public class MyService implements com.learn.services.Service {
     private MyRepositoryImpl myRepository;
 
     // constructor manual-injection
@@ -10,8 +12,9 @@ public class MyService {
         this.myRepository = myRepository;
     }
 
-    public void doSomething(){
-        System.out.println("Doing something important!");
+    @Override
+    public void doSomething() {
+        System.out.println("Me do my job!");
         myRepository.doQuery();
     }
 }

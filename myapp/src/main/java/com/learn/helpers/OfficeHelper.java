@@ -1,17 +1,17 @@
 package com.learn.helpers;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OfficeHelper {
-    public OfficeHelper() {
-        name = "Jenny";
-    }
+    public OfficeHelper() { }
 
     public OfficeHelper(String name) {
         this.name = name;
     }
 
+    @Value("${my.name:Jenny}")
     private String name;
 
     public void helpToDoSomething(String task) {

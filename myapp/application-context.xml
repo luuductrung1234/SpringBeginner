@@ -9,6 +9,7 @@
 
     <bean id="yourService" class="com.learn.services.YourService" scope="prototype">
         <property name="name" value="Thomas Edison"/>
+        <property name="city" value="NewYork"/>
     </bean>
 
     <bean id="repository" class="com.learn.repositories.MyRepositoryImpl"/>

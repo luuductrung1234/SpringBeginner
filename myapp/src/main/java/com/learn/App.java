@@ -40,8 +40,14 @@ public class App {
     public static void RunSecondContext() {
         ApplicationContext secondContext = new ClassPathXmlApplicationContext("application-context.xml");
 
-        Service service = secondContext.getBean(HisService.class);
-        service.doSomething();
+        Service myService = secondContext.getBean(MyService.class);
+        myService.doSomething();
+
+        Service yourService  = secondContext.getBean(YourService.class);
+        yourService.doSomething();
+
+        Service hisService = secondContext.getBean(HisService.class);
+        hisService.doSomething();
 
         Service herService = secondContext.getBean(HerService.class);
         herService.doSomething();
