@@ -12,6 +12,8 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  */
 public class App {
     public static void main(String[] args) {
+        System.setProperty("spring.profiles.active", "local");
+
         RunFirstContext();
         RunSecondContext();
         RunThirdContext();
