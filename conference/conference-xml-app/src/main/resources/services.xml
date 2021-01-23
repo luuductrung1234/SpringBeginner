@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="repositories.xml"/>
+
+    <!--    <bean name="speakerService"-->
+    <!--          class="com.learning.conference.conferencexmlapp.services.SpeakerServiceImpl">-->
+    <!--        <property name="speakerRepository" ref="speakerRepository"/>-->
+    <!--    </bean>-->
+
+    <!--    <bean name="feeCalculateService"-->
+    <!--          class="com.learning.conference.conferencexmlapp.services.FeeCalculateServiceImpl">-->
+    <!--        <constructor-arg name="feeScheduleRepository" ref="feeScheduleRepository"/>-->
+    <!--    </bean>-->
+
+    <bean name="speakerService"
+          class="com.learning.conference.conferencexmlapp.services.SpeakerServiceImpl" autowire="byType"/>
+
+    <bean name="feeCalculateService"
+          class="com.learning.conference.conferencexmlapp.services.FeeCalculateServiceImpl" autowire="constructor"/>
+</beans>

@@ -1,0 +1,23 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/target": false,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/*.iml": true,
+    "**/.idea": true
+  },
+  // ------------------------------------------
+  // Project
+  // ------------------------------------------
+  "project.java.mainModule": "conference-app",
+  "project.java.mainClassPath": "conference-app/target/conference-app-1.0-SNAPSHOT.jar",
+  "project.java.mainClass": "com.learning.conference.conferenceapp.App",
+  "project.java.mainClass.args": ""
+}
