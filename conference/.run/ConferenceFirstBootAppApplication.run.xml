@@ -2,6 +2,7 @@
   <configuration default="false" name="ConferenceFirstBootAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="conference-first-boot-app" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.learning.conference.conferencefirstbootapp.ConferenceFirstBootAppApplication" />
+    <option name="ENABLE_JMX_AGENT" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" />
     <envs>
       <env name="PROFILE_ACTIVE" value="dev" />
