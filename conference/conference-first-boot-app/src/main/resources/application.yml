@@ -1,0 +1,5 @@
+# this file is the same as application.properties file
+# also the same as profile files (e.g. application-dev.yml)
+
+server:
+  port: 5000
