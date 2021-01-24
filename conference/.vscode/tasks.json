@@ -6,10 +6,10 @@
     // Explicit declare env
     // Because of vscode shell not load current environment variables on this machine
     "env": {
-      "SPRING_PROFILES_ACTIVE": "dev",
-      "SPRING_DATASOURCE_URL": "jdbc:postgresql://localhost:5432/conference_app",
-      "SPRING_DATASOURCE_USERNAME": "sa",
-      "SPRING_DATASOURCE_PASSWORD": "P@ssword1"
+      "PROFILE_ACTIVE": "dev",
+      "CONFERENCE_DB": "jdbc:postgresql://localhost:5432/conference_app",
+      "CONFERENCE_DB_USER": "sa",
+      "CONFERENCE_DB_PASSWORD": "P@ssword1"
     }
   },
   "presentation": {
