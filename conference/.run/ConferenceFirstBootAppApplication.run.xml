@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ConferenceFirstBootAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="conference-first-boot-app" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.learning.conference.conferencefirstbootapp.ConferenceFirstBootAppApplication" />
+    <option name="ENABLE_JMX_AGENT" value="false" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <envs>
+      <env name="PROFILE_ACTIVE" value="dev" />
+      <env name="CONFERENCE_DB" value="jdbc:postgresql://localhost:5432/conference_app" />
+      <env name="CONFERENCE_DB_USER" value="sa" />
+      <env name="CONFERENCE_DB_PASSWORD" value="P@ssword1" />
+    </envs>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

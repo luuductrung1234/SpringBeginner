@@ -2,7 +2,31 @@
   // See https://go.microsoft.com/fwlink/?LinkId=733558
   // for the documentation about the tasks.json format
   "version": "2.0.0",
+  "options": {
+    // Explicit declare env
+    // Because of vscode shell not load current environment variables on this machine
+    "env": {
+      "PROFILE_ACTIVE": "dev",
+      "CONFERENCE_DB": "jdbc:postgresql://localhost:5432/conference_app",
+      "CONFERENCE_DB_USER": "sa",
+      "CONFERENCE_DB_PASSWORD": "P@ssword1"
+    }
+  },
+  "presentation": {
+    "echo": true,
+    "reveal": "always",
+    "focus": false,
+    "panel": "dedicated",
+    "showReuseMessage": false
+  },
   "tasks": [
+    {
+      "label": "run simple command",
+      "type": "shell",
+      "command": "printenv SPRING_DATASOURCE_URL",
+      "problemMatcher": [],
+      "detail": "ℹ️ run simple command to test vscode shell"
+    },
     {
       "label": "execute Maven Phases (build phases)",
       "type": "shell",
@@ -40,7 +64,27 @@
         // "-am",
         // "-X"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "detail": "ℹ️ build from default working directory"
+    },
+    {
+      "label": "build main module",
+      "type": "shell",
+      "command": "mvn",
+      "group": "build",
+      "args": [
+        "clean",
+        "package"
+        // "-pl",
+        // "${input:module}",
+        // "-am",
+        // "-X"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${config:project.java.mainModule}"
+      },
+      "detail": "ℹ️ build on main module directory"
     },
     {
       "label": "run (maven)",
@@ -71,6 +115,15 @@
       "problemMatcher": [],
       "dependsOn": ["build"],
       "detail": "ℹ️ run Java application by Java CLI"
+    },
+    {
+      "label": "run (jar)",
+      "type": "shell",
+      "command": "java",
+      "args": ["-jar", "${config:project.java.mainClassPath}"],
+      "problemMatcher": [],
+      "dependsOn": ["build main module"],
+      "detail": "ℹ️ run Java application, packaged in JAR file"
     },
     {
       "label": "show dependency",

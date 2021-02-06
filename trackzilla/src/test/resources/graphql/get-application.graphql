@@ -1,0 +1,8 @@
+query {
+    findAllApplications {
+        id
+        name
+        owner
+        description
+    }
+}

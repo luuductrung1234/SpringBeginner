@@ -16,8 +16,8 @@
   // ------------------------------------------
   // Project
   // ------------------------------------------
-  "project.java.mainModule": "conference-app",
-  "project.java.mainClassPath": "conference-app/target/conference-app-1.0-SNAPSHOT.jar",
-  "project.java.mainClass": "com.learning.conference.conferenceapp.App",
+  "project.java.mainModule": "conference-first-boot-app",
+  "project.java.mainClassPath": "conference-first-boot-app/target/conference-first-boot-app-0.0.1-SNAPSHOT.jar",
+  "project.java.mainClass": "com.learning.conference.conferencefirstbootapp.ConferenceFirstBootAppApplication",
   "project.java.mainClass.args": ""
 }
