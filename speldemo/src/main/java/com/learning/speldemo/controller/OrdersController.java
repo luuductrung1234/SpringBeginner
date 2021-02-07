@@ -35,9 +35,19 @@ public class OrdersController {
         return ResponseEntity.ok(order.getAmount());
     }
 
+    @GetMapping("/discount")
+    public ResponseEntity<Double> getOrderDiscount() {
+        return ResponseEntity.ok(order.getDiscount());
+    }
+
     @GetMapping("/amount/formatted")
     public ResponseEntity<String> getOrderFormattedAmount() {
         return ResponseEntity.ok(order.getFormattedAmount());
+    }
+
+    @GetMapping("/summary")
+    public ResponseEntity<String> getOrderSummary() {
+        return ResponseEntity.ok(order.getOrderSummary());
     }
 
     @GetMapping("/shipping/locations")

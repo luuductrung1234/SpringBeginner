@@ -11,7 +11,7 @@ public class Order {
     @Value("#{100.55 + 500.75 + 400.66}")
     private double amount;
 
-    @Value("#{order.amount >= 1000 ? order.amount * 5 / 100 : 0}")
+    @Value("#{order.amount >= 1000 ? 5 / 100 : 0}")
     private double discount;
 
     @Value("#{user.country == 'US' and user.timeZone == 'America/New_York' ? 3 : 14}")
@@ -34,6 +34,9 @@ public class Order {
 
     @Value("#{order.shippingLocations.?[shipping<20].size()}")
     private Integer noOfCheapShippingLocations;
+
+    @Value("#{user.name} your order total is #{order.formattedAmount} and the payable amount with #{order.discount}% discount is #{order.amount * (1 - order.discount)}")
+    private String orderSummary;
 
     public double getAmount() {
         return amount;
@@ -105,5 +108,13 @@ public class Order {
 
     public void setNoOfCheapShippingLocations(Integer noOfCheapShippingLocations) {
         this.noOfCheapShippingLocations = noOfCheapShippingLocations;
+    }
+
+    public String getOrderSummary() {
+        return orderSummary;
+    }
+
+    public void setOrderSummary(String orderSummary) {
+        this.orderSummary = orderSummary;
     }
 }
