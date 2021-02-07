@@ -1,5 +1,6 @@
 package com.learning.speldemo.data;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -43,6 +44,7 @@ public class User {
         return country;
     }
 
+    @Value("#{systemProperties['user.country']}")
     public void setCountry(String country) {
         this.country = country;
     }
@@ -55,11 +57,11 @@ public class User {
         this.language = language;
     }
 
-    @Value("#{systemProperties['user.timezone']}")
     public String getTimeZone() {
         return timeZone;
     }
 
+    @Value("#{systemProperties['user.timezone']}")
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }

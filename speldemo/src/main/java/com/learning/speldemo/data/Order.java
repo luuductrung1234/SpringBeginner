@@ -3,6 +3,9 @@ package com.learning.speldemo.data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Map;
+
 @Component("order")
 public class Order {
     @Value("#{100.55 + 500.75 + 400.66}")
@@ -19,6 +22,18 @@ public class Order {
 
     @Value("#{T(java.text.NumberFormat).getCurrencyInstance(T(java.util.Locale).getDefault()).format(order.amount)}")
     private String formattedAmount;
+
+    @Value("#{shipping.locationByCountry[user.country]}")
+    private List<City> shippingLocations;
+
+    @Value("#{shipping.locationByCountry.?[key == 'UK' or key == 'US']}")
+    private Map<String, List<City>> westernShippingLocations;
+
+    @Value("#{order.shippingLocations.?[isCapital != true]}")
+    private List<City> nonCapitalShippingLocations;
+
+    @Value("#{order.shippingLocations.?[shipping<20].size()}")
+    private Integer noOfCheapShippingLocations;
 
     public double getAmount() {
         return amount;
@@ -58,5 +73,37 @@ public class Order {
 
     public void setFormattedAmount(String formattedAmount) {
         this.formattedAmount = formattedAmount;
+    }
+
+    public List<City> getShippingLocations() {
+        return shippingLocations;
+    }
+
+    public void setShippingLocations(List<City> shippingLocations) {
+        this.shippingLocations = shippingLocations;
+    }
+
+    public List<City> getNonCapitalShippingLocations() {
+        return nonCapitalShippingLocations;
+    }
+
+    public void setNonCapitalShippingLocations(List<City> nonCapitalShippingLocations) {
+        this.nonCapitalShippingLocations = nonCapitalShippingLocations;
+    }
+
+    public Map<String, List<City>> getWesternShippingLocations() {
+        return westernShippingLocations;
+    }
+
+    public void setWesternShippingLocations(Map<String, List<City>> westernShippingLocations) {
+        this.westernShippingLocations = westernShippingLocations;
+    }
+
+    public Integer getNoOfCheapShippingLocations() {
+        return noOfCheapShippingLocations;
+    }
+
+    public void setNoOfCheapShippingLocations(Integer noOfCheapShippingLocations) {
+        this.noOfCheapShippingLocations = noOfCheapShippingLocations;
     }
 }
