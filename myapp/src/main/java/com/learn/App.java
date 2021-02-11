@@ -1,6 +1,12 @@
 package com.learn;
 
+import com.learn.commands.CommandManager;
 import com.learn.configs.AppConfig;
+import com.learn.models.Account;
+import com.learn.models.PaymentHistory;
+import com.learn.models.PaymentMethod;
+import com.learn.repositories.AccountRepository;
+import com.learn.views.PaymentRequest;
 import com.learn.services.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,8 +20,8 @@ public class App {
     public static void main(String[] args) {
         System.setProperty("spring.profiles.active", "local");
 
-        RunFirstContext();
-        RunSecondContext();
+//        RunFirstContext();
+//        RunSecondContext();
         RunThirdContext();
     }
 
@@ -45,7 +51,7 @@ public class App {
         Service myService = secondContext.getBean(MyService.class);
         myService.doSomething();
 
-        Service yourService  = secondContext.getBean(YourService.class);
+        Service yourService = secondContext.getBean(YourService.class);
         yourService.doSomething();
 
         Service hisService = secondContext.getBean(HisService.class);
@@ -69,5 +75,27 @@ public class App {
 
         Service theirService = thirdContext.getBean(TheirService.class);
         theirService.doSomething();
+
+        System.out.println();
+        System.out.println("-----------------------------------");
+        System.out.println("Business Demo");
+        System.out.println("-----------------------------------");
+        System.out.println();
+
+        CommandManager commandManager = thirdContext.getBean(CommandManager.class);
+        AccountRepository accountRepository = thirdContext.getBean(AccountRepository.class);
+
+        Account account = accountRepository.getById(1).get();
+        System.out.println("Account before payment: \n" + account + "\n");
+
+        PaymentHistory result = (PaymentHistory) commandManager.process(new PaymentRequest(1, 400_000, PaymentMethod.EWallet));
+        System.out.println("Result from command: \n" + result + "\n");
+
+        System.out.println("Account after payment: \n" + account + "\n");
+
+        result = (PaymentHistory) commandManager.process(new PaymentRequest(1, 3_900_000, PaymentMethod.Bank));
+        System.out.println("Result from command: \n" + result + "\n");
+
+        System.out.println("Account after payment: \n" + account + "\n");
     }
 }
