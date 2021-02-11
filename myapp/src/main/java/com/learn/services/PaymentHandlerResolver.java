@@ -1,20 +1,18 @@
 package com.learn.services;
 
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
-@Service
-public class PaymentHandlerResolver implements ApplicationContextAware {
-    private ApplicationContext applicationContext;
+import java.util.Set;
 
-    public PaymentHandler getPaymentHandler(String paymentMethod){
-        return this.applicationContext.getBean(paymentMethod, PaymentHandler.class);
+@Service
+public class PaymentHandlerResolver {
+    private final Set<PaymentHandler> paymentHandlers;
+
+    public PaymentHandlerResolver(Set<PaymentHandler> paymentHandlers) {
+        this.paymentHandlers = paymentHandlers;
     }
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
+    public PaymentHandler getPaymentHandler(String paymentMethod) {
+        return paymentHandlers.stream().filter(handler -> handler.getPaymentMethod().equalsIgnoreCase(paymentMethod)).findFirst().get();
     }
 }
