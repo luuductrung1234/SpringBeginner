@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/dummy-beans/dummy-beans.iml" filepath="$PROJECT_DIR$/dummy-beans/dummy-beans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/money-transfer/money-transfer.iml" filepath="$PROJECT_DIR$/money-transfer/money-transfer.iml" />
       <module fileurl="file://$PROJECT_DIR$/myapp.iml" filepath="$PROJECT_DIR$/myapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-console-app/simple-console-app.iml" filepath="$PROJECT_DIR$/simple-console-app/simple-console-app.iml" />
     </modules>
   </component>
 </project>

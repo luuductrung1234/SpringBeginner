@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myService" class="com.learn.dummybeans.services.MyService" scope="singleton">
+        <constructor-arg name="myRepository" ref="repository"/>
+    </bean>
+
+    <bean id="yourService" class="com.learn.dummybeans.services.YourService" scope="prototype">
+        <property name="name" value="Thomas Edison"/>
+        <property name="city" value="NewYork"/>
+    </bean>
+
+    <bean id="repository" class="com.learn.dummybeans.repositories.MyRepositoryImpl"/>
+
+</beans>
