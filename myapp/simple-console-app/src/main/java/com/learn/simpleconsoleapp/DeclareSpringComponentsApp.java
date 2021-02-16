@@ -17,14 +17,8 @@ public class DeclareSpringComponentsApp {
         var xmlContext = new GenericXmlApplicationContext();
         xmlContext.load("classpath:application-context.xml");
         xmlContext.refresh();
-        // instruct Spring to register shutdown hook to underlying JVM Runtime
-        // context destroy() or close() will be call automatically
-        xmlContext.registerShutdownHook();
 
         var annotationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        // instruct Spring to register shutdown hook to underlying JVM Runtime
-        // context destroy() or close() will be call automatically
-        annotationContext.registerShutdownHook();
 
         System.out.println("\n--------------------------");
         System.out.println("Get Started with ApplicationContext");

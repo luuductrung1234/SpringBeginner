@@ -5,6 +5,7 @@ import com.learn.dummybeans.services.TheirService;
 import com.learn.simpleconsoleapp.beans.Singer;
 import com.learn.simpleconsoleapp.beans.SingerWithInterface;
 import com.learn.simpleconsoleapp.beans.SingerWithJSR250;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
@@ -44,8 +45,8 @@ public class AppConfig {
 
     /**
      * the CGLIB (bytecode generate), which look into AppConfig (Configuration Bean),
-     * then makes the BeanFactory perform {@link org.springframework.beans.factory.InitializingBean}'s
-     * afterPropertiesSet() method  (life-cycle callback) after instantiation (every bean properties was set).
+     * then makes the BeanFactory perform {@link InitializingBean#afterPropertiesSet()}'s method
+     * (life-cycle callback) after instantiation (every bean properties was set).
      *
      * @return {@link SingerWithInterface}
      */

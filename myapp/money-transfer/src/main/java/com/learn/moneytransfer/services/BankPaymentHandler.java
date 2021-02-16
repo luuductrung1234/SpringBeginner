@@ -69,6 +69,10 @@ public class BankPaymentHandler implements PaymentHandler, BeanNameAware {
         return paymentHistory;
     }
 
+    /**
+     * @Implement {@link BeanNameAware#setBeanName(String)}
+     * @param name
+     */
     @Override
     public void setBeanName(String name) {
         paymentMethod = name;
