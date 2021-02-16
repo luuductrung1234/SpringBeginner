@@ -1,5 +1,8 @@
 package com.learn.simpleconsoleapp.beans;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,8 +10,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
-@Award(prize = {"grammy", "platinum disk"})
-public class Singer {
+public class SingerWithInterface implements InitializingBean, DisposableBean {
     private static final String DEFAULT_NAME = "Eric Clapton";
     private static final String DEFAULT_LYRIC = "Down there below us, under the clouds";
 
@@ -18,7 +20,8 @@ public class Singer {
     private String lyricFilePath;
     private String createdBy;
 
-    public void init() throws Exception {
+    @Override
+    public void afterPropertiesSet() throws Exception {
         System.out.println("[Initializing bean] " + super.toString() + " . . .\n");
 
         if (name == null) {
@@ -30,6 +33,7 @@ public class Singer {
             throw new IllegalArgumentException(
                     "You must set the age property of any beans of type " + Singer.class);
         }
+
 
         if (!Files.exists(Paths.get(lyricFilePath))) {
             lyric = DEFAULT_LYRIC;
@@ -47,6 +51,7 @@ public class Singer {
                 "\n\texists: " + Files.exists(Paths.get(lyricFilePath)) + "\n");
     }
 
+    @Override
     public void destroy() throws Exception {
         System.out.println("[Destroying bean] " + super.toString() + " . . .\n");
 

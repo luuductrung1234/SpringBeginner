@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
@@ -40,5 +41,41 @@
     <bean class="java.lang.String"/>
     <bean name="jon johnny,jonathan;jim" class="java.lang.String"/>
     <bean id="jon johnny,jonathan;jim" class="java.lang.String"/>
+
+    <bean id="singerOne"
+          class="com.learn.simpleconsoleapp.beans.Singer"
+          lazy-init="true"
+          init-method="init"
+          destroy-method="destroy"
+          p:name="John Mayer" p:age="39"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerOne.txt"
+          p:createdBy="XML Configuration"/>
+    <bean id="singerTwo"
+          class="com.learn.simpleconsoleapp.beans.Singer"
+          lazy-init="true"
+          init-method="init"
+          destroy-method="destroy"
+          p:age="72"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerTwo.txt"
+          p:createdBy="XML Configuration"/>
+    <bean id="singerThree"
+          class="com.learn.simpleconsoleapp.beans.Singer"
+          lazy-init="true"
+          init-method="init"
+          destroy-method="destroy"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerThree.txt"
+          p:name="John Butler" p:createdBy="XML Configuration"/>
+
+    <bean id="singerWithInterfaceTwo"
+          class="com.learn.simpleconsoleapp.beans.SingerWithInterface"
+          lazy-init="true"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerWithInterfaceTwo.txt"
+          p:name="Lucas Maura" p:age="52" p:createdBy="XML Configuration"/>
+
+    <bean id="singerWithJSR250Two"
+          class="com.learn.simpleconsoleapp.beans.SingerWithJSR250"
+          lazy-init="true"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerWithJSR250Two.txt"
+          p:name="Luiz Castaneda" p:age="22" p:createdBy="XML Configuration"/>
 
 </beans>
