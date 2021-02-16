@@ -5,11 +5,13 @@ import com.learn.simpleconsoleapp.beans.Singer;
 import com.learn.simpleconsoleapp.beans.SingerWithInterface;
 import com.learn.simpleconsoleapp.beans.SingerWithJSR250;
 import com.learn.simpleconsoleapp.configs.AppConfig;
+import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import java.security.MessageDigest;
 import java.util.Arrays;
 
 public class DeclareSpringComponentsApp {
@@ -27,6 +29,7 @@ public class DeclareSpringComponentsApp {
         var messageRenderer = xmlContext.getBean(MessageRenderer.class);
         messageRenderer.render();
 
+
         System.out.println("\n--------------------------");
         System.out.println("Collection Injection");
         System.out.println("--------------------------\n");
@@ -34,11 +37,13 @@ public class DeclareSpringComponentsApp {
         var collectionInjection = xmlContext.getBean(CollectionInjection.class);
         collectionInjection.displayInfo();
 
+
         System.out.println("\n--------------------------");
         System.out.println("Method Injection");
         System.out.println("--------------------------\n");
 
         // TODO: read later
+
 
         System.out.println("\n--------------------------");
         System.out.println("Understand Bean Naming");
@@ -54,6 +59,11 @@ public class DeclareSpringComponentsApp {
                     + "\n\t[aliases]: "
                     + Arrays.toString(xmlContext.getAliases(b.getKey())) + "\n");
         });
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Bean Life-Cycle");
+        System.out.println("--------------------------\n");
 
         Arrays.stream(annotationContext.getBeanFactory().getBeanNamesForType(Singer.class)).forEach(beanName -> {
             try {
@@ -94,6 +104,19 @@ public class DeclareSpringComponentsApp {
             }
         });
 
+
+        System.out.println("\n--------------------------");
+        System.out.println("Spring FactoryBean");
+        System.out.println("--------------------------\n");
+
+        var digester = annotationContext.getBean(MessageDigester.class);
+        digester.digest("Hello World!");
+
+        var messageDigestBeanName = Arrays.stream(annotationContext.getBeanNamesForType(MessageDigest.class)).findFirst();
+        if(messageDigestBeanName.isPresent()){
+            var messageDigestFactoryBean = annotationContext.getBean("&" + messageDigestBeanName.get());
+            System.out.println("MessageDigestFactoryBean: " + messageDigestFactoryBean + "\n");
+        }
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
     }
