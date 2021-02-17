@@ -1,9 +1,6 @@
 package com.learn.simpleconsoleapp;
 
-import com.learn.simpleconsoleapp.beans.CollectionInjection;
-import com.learn.simpleconsoleapp.beans.Singer;
-import com.learn.simpleconsoleapp.beans.SingerWithInterface;
-import com.learn.simpleconsoleapp.beans.SingerWithJSR250;
+import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
@@ -113,10 +110,20 @@ public class DeclareSpringComponentsApp {
         digester.digest("Hello World!");
 
         var messageDigestBeanName = Arrays.stream(annotationContext.getBeanNamesForType(MessageDigest.class)).findFirst();
-        if(messageDigestBeanName.isPresent()){
+        if (messageDigestBeanName.isPresent()) {
             var messageDigestFactoryBean = annotationContext.getBean("&" + messageDigestBeanName.get());
             System.out.println("MessageDigestFactoryBean: " + messageDigestFactoryBean + "\n");
         }
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("JavaBean PropertyEditor");
+        System.out.println("--------------------------\n");
+
+        var samplePropertyEditorBean = annotationContext.getBean(SamplePropertyEditorBean.class);
+
+        var customerBean = annotationContext.getBean(Customer.class);
+        System.out.println(customerBean.getFullName());
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
     }
