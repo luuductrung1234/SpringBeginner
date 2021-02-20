@@ -64,7 +64,9 @@ public class EWalletPaymentHandler implements PaymentHandler, BeanNameAware {
         account.AddPayment(paymentHistory);
 
         Double earnedPoint = (paymentRequest.getAmount() / 100_000) * 0.001;
-        account.earnBankPoint(earnedPoint);
+        account.earnEWalletPoint(earnedPoint);
+
+        accountRepository.save();
 
         return paymentHistory;
     }

@@ -24,8 +24,8 @@ public class PaymentCommand implements Command<PaymentRequest, PaymentHistory> {
     }
 
     @Override
-    public void setPaymentRequest(PaymentRequest paymentRequest) {
-        this.paymentRequest = paymentRequest;
+    public void setState(PaymentRequest state) {
+        this.paymentRequest = state;
     }
 
     @Override

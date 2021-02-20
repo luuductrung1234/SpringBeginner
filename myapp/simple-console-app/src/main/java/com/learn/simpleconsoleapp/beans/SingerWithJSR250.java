@@ -51,7 +51,7 @@ public class SingerWithJSR250 {
 
     @PreDestroy
     public void destroy() throws Exception {
-        System.out.println("[Destroying bean] " + super.toString() + " . . .\n");
+        System.out.println("\n[Destroying bean] " + super.toString() + " . . .\n");
 
         Files.deleteIfExists(Paths.get(lyricFilePath));
 

@@ -1,5 +1,11 @@
 package com.learn.simpleconsoleapp;
 
+import com.learn.moneytransfer.commands.CommandManager;
+import com.learn.moneytransfer.models.Account;
+import com.learn.moneytransfer.models.PaymentHistory;
+import com.learn.moneytransfer.models.PaymentMethod;
+import com.learn.moneytransfer.repositories.AccountRepository;
+import com.learn.moneytransfer.views.PaymentRequest;
 import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.services.MessageDigester;
@@ -131,11 +137,21 @@ public class DeclareSpringComponentsApp {
         System.out.println("Internationalization with MessageSource");
         System.out.println("--------------------------\n");
 
-        System.out.println(annotationContext.getMessage("msg (en): ", null, Locale.ENGLISH));
-        System.out.println(annotationContext.getMessage("msg (de-DE): ", null, Locale.GERMANY));
+        System.out.println("msg (en): " + annotationContext.getMessage("msg", null, Locale.ENGLISH));
+        System.out.println("msg (de-DE): " + annotationContext.getMessage("msg", null, Locale.GERMANY));
 
-        System.out.println(annotationContext.getMessage("nameMsg (en): ", new Object[]{"John", "Mayer"}, Locale.ENGLISH));
-        System.out.println(annotationContext.getMessage("nameMsg (de-DE): ", new Object[]{"John", "Mayer"}, Locale.GERMANY));
+        System.out.println("nameMsg (en): " + annotationContext.getMessage("nameMsg", new Object[]{"John", "Mayer"}, Locale.ENGLISH));
+        System.out.println("nameMsg (de-DE): " + annotationContext.getMessage("nameMsg", new Object[]{"John", "Mayer"}, Locale.GERMANY));
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("ApplicationEvent");
+        System.out.println("--------------------------\n");
+
+        CommandManager commandManager = annotationContext.getBean(CommandManager.class);
+        AccountRepository accountRepository = annotationContext.getBean(AccountRepository.class);
+        Account account = accountRepository.getById(1).get();
+        PaymentHistory result = (PaymentHistory) commandManager.process(new PaymentRequest(1, 400_000, PaymentMethod.EWallet));
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
     }

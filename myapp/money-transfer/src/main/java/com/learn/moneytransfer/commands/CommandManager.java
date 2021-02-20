@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public abstract class CommandManager {
     public Object process(Object commandState) {
         Command command = createCommand();
-        command.setPaymentRequest(commandState);
+        command.setState(commandState);
         return command.execute();
     }
 

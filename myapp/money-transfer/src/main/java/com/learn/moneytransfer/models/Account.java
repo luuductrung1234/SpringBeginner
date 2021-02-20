@@ -1,9 +1,13 @@
 package com.learn.moneytransfer.models;
 
+import com.learn.moneytransfer.events.AccountAddPaymentEvent;
+import com.learn.moneytransfer.events.AccountEarnBankPointEvent;
+import com.learn.moneytransfer.events.AccountEarnEWalletPointEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Account {
+public class Account extends AggregateRoot{
     private int id;
     private String name;
     private AccountType type;
@@ -21,14 +25,17 @@ public class Account {
     }
 
     public void AddPayment(PaymentHistory paymentHistory) {
+        this.addEvent(new AccountAddPaymentEvent(this));
         paymentHistories.add(paymentHistory);
     }
 
     public double earnBankPoint(double point) {
+        this.addEvent(new AccountEarnBankPointEvent(this, point));
         return this.memberBankPoint += point;
     }
 
     public double earnEWalletPoint(double point) {
+        this.addEvent(new AccountEarnEWalletPointEvent(this, point));
         return this.memberEWalletPoint += point;
     }
 
