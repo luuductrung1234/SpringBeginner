@@ -10,6 +10,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.security.MessageDigest;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class DeclareSpringComponentsApp {
     public static void main(String[] args) {
@@ -124,6 +125,17 @@ public class DeclareSpringComponentsApp {
 
         var customerBean = annotationContext.getBean(Customer.class);
         System.out.println(customerBean.getFullName());
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Internationalization with MessageSource");
+        System.out.println("--------------------------\n");
+
+        System.out.println(annotationContext.getMessage("msg (en): ", null, Locale.ENGLISH));
+        System.out.println(annotationContext.getMessage("msg (de-DE): ", null, Locale.GERMANY));
+
+        System.out.println(annotationContext.getMessage("nameMsg (en): ", new Object[]{"John", "Mayer"}, Locale.ENGLISH));
+        System.out.println(annotationContext.getMessage("nameMsg (de-DE): ", new Object[]{"John", "Mayer"}, Locale.GERMANY));
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
     }

@@ -8,6 +8,7 @@ import com.learn.simpleconsoleapp.beans.SingerWithJSR250;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
+import org.springframework.context.support.ResourceBundleMessageSource;
 
 @Configuration
 @ComponentScan(basePackages = {"com.learn.dummybeans", "com.learn.moneytransfer", "com.learn.simpleconsoleapp"})
@@ -23,6 +24,18 @@ public class AppConfig {
     @Scope("prototype")
     public TheirService getTheirService() {
         return new TheirService(new MyRepositoryImpl());
+    }
+
+    /**
+     * NOTICE!
+     * {@link ResourceBundleMessageSource} must be define as a bean with name "messageSource" to be detected by Container
+     * @return
+     */
+    @Bean("messageSource")
+    public ResourceBundleMessageSource getResourceBundleMessageSource() {
+        var messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasenames("labels");
+        return messageSource;
     }
 
     /**
