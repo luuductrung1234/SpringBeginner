@@ -13,7 +13,10 @@ import com.learn.simpleconsoleapp.services.MessageRenderer;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.core.io.Resource;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.util.Arrays;
 import java.util.Locale;
@@ -152,6 +155,25 @@ public class DeclareSpringComponentsApp {
         AccountRepository accountRepository = annotationContext.getBean(AccountRepository.class);
         Account account = accountRepository.getById(1).get();
         PaymentHistory result = (PaymentHistory) commandManager.process(new PaymentRequest(1, 400_000, PaymentMethod.EWallet));
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Resources");
+        System.out.println("--------------------------\n");
+
+        try{
+            var file = Files.createTempFile("test", "txt").toFile();
+            file.deleteOnExit();
+            Resource res1 = annotationContext.getResource("file://" + file.getPath());
+            System.out.println(res1.getClass() + "\n\t" + res1.getURL().getContent());
+            Resource res2 = annotationContext.getResource("classpath:dummy.txt");
+            System.out.println(res2.getClass() + "\n\t" + res2.getURL().getContent());
+            Resource res3 = annotationContext.getResource("http://www.google.com");
+            System.out.println(res3.getClass() + "\n\t" + res3.getURL().getContent());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
     }
