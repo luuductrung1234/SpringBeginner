@@ -13,12 +13,14 @@ import com.learn.simpleconsoleapp.services.MessageRenderer;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class DeclareSpringComponentsApp {
@@ -173,6 +175,33 @@ public class DeclareSpringComponentsApp {
         }catch (IOException e){
             e.printStackTrace();
         }
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Environment and PropertySource Abstraction");
+        System.out.println("--------------------------\n");
+
+        var env = annotationContext.getEnvironment();
+        var propertySources = env.getPropertySources();
+
+        var appMap = new HashMap<String, Object>();
+        appMap.put("user.home", "application_home");
+        propertySources.addLast(new MapPropertySource("spring5_custom_MAP", appMap));
+
+        System.out.println("user.home: " + System.getProperty("user.home"));
+        System.out.println("JAVA_HOME: " + System.getProperty("JAVA_HOME"));
+
+        System.out.println("user.home: " + env.getProperty("user.home"));
+        System.out.println("JAVA_HOME: " + env.getProperty("JAVA_HOME"));
+
+        propertySources.addFirst(new MapPropertySource("spring5_custom_MAP", appMap));
+
+        System.out.println("user.home: " + System.getProperty("user.home"));
+        System.out.println("JAVA_HOME: " + System.getProperty("JAVA_HOME"));
+
+        System.out.println("user.home: " + env.getProperty("user.home"));
+        System.out.println("JAVA_HOME: " + env.getProperty("JAVA_HOME"));
+
 
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
