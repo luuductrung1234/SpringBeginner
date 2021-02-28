@@ -8,6 +8,10 @@ import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * This interface is particularly useful when you need to use the same
+ * set of property editors in several different situations.
+ */
 public class CustomPropertyEditorRegistrar implements PropertyEditorRegistrar {
     @Override
     public void registerCustomEditors(PropertyEditorRegistry registry) {

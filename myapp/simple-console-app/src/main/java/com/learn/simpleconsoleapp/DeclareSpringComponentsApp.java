@@ -10,6 +10,8 @@ import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.PropertyValue;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
@@ -129,16 +131,6 @@ public class DeclareSpringComponentsApp {
 
 
         System.out.println("\n--------------------------");
-        System.out.println("JavaBean PropertyEditor");
-        System.out.println("--------------------------\n");
-
-        var samplePropertyEditorBean = annotationContext.getBean(SamplePropertyEditorBean.class);
-
-        var customerBean = annotationContext.getBean(Customer.class);
-        System.out.println(customerBean.getFullName());
-
-
-        System.out.println("\n--------------------------");
         System.out.println("Internationalization with MessageSource");
         System.out.println("--------------------------\n");
 
@@ -163,7 +155,7 @@ public class DeclareSpringComponentsApp {
         System.out.println("Resources");
         System.out.println("--------------------------\n");
 
-        try{
+        try {
             var file = Files.createTempFile("test", "txt").toFile();
             file.deleteOnExit();
             Resource res1 = annotationContext.getResource("file://" + file.getPath());
@@ -172,7 +164,7 @@ public class DeclareSpringComponentsApp {
             System.out.println(res2.getClass() + "\n\t" + res2.getURL().getContent());
             Resource res3 = annotationContext.getResource("http://www.google.com");
             System.out.println(res3.getClass() + "\n\t" + res3.getURL().getContent());
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -201,6 +193,83 @@ public class DeclareSpringComponentsApp {
 
         System.out.println("user.home: " + env.getProperty("user.home"));
         System.out.println("JAVA_HOME: " + env.getProperty("JAVA_HOME"));
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Bean Wrapper");
+        System.out.println("--------------------------\n");
+
+        // BeanWrapperImpl implements BeanWrapper interface
+        // and extends PropertyEditorRegistrySupport, which implements PropertyEditorRegistry interface
+
+        // DataBinder also implements PropertyEditorRegistry interface
+
+        var companyBeanWrapper = new BeanWrapperImpl(new Company());
+        companyBeanWrapper.setPropertyValue("name", "Spring Pivotal Inc.");
+        companyBeanWrapper.setPropertyValue(new PropertyValue("branch", "San Jose st."));
+
+        var tomBeanWrapper = new BeanWrapperImpl(new Employee());
+        tomBeanWrapper.setPropertyValue("name", "Tom Davies");
+        tomBeanWrapper.setPropertyValue("salary", 1500);
+
+        companyBeanWrapper.setPropertyValue("managingDirector", tomBeanWrapper.getWrappedInstance());
+
+        var managingDirectorSalary = (Float) companyBeanWrapper.getPropertyValue("managingDirector.salary");
+        System.out.println("Managing Director salary: " + managingDirectorSalary);
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("JavaBean PropertyEditor");
+        System.out.println("--------------------------\n");
+
+        // Spring uses the concept of a PropertyEditor to effect the conversion
+        // between an Object and a String. It can be handy to represent properties
+        // in a different way than the object itself
+
+        // use PropertyEditorRegistrar, which receive PropertyEditorRegistry, to call
+        // PropertyEditorRegistry.registerCustomEditor() to register custom PropertyEditor
+
+        var samplePropertyEditorBean = annotationContext.getBean(SamplePropertyEditorBean.class);
+        System.out.println("Constructed bean: " + samplePropertyEditorBean);
+
+        var customerBean = annotationContext.getBean(Customer.class);
+        System.out.println("Customer full name: " + customerBean.getFullName());
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Spring Type Conversion");
+        System.out.println("--------------------------\n");
+
+        // Spring 3 introduce core.convert package that provides a general type conversion system.
+
+        // The system defines an SPI to implement type conversion logic. Within a Spring container,
+        // you can use this system as an alternative to PropertyEditor implementation to convert
+        // externalized bean property value strings to the required property types
+
+        // The system defines an API to perform type conversions at runtime. You can use the
+        // public API anywhere in your application where type conversion is needed.
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Spring Field Formatting");
+        System.out.println("--------------------------\n");
+
+        // Type conversion requirement of a typical client environment (e.g web or desktop local environment)
+
+        // TODO: read later
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Java Bean Validation");
+        System.out.println("--------------------------\n");
+
+        // https://beanvalidation.org/
+
+        // TODO: read later
+
+
+
+
 
 
 
