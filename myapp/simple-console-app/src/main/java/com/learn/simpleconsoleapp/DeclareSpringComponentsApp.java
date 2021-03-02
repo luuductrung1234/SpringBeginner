@@ -10,6 +10,7 @@ import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
+import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.PropertyValue;
 import org.springframework.beans.factory.BeanCreationException;
@@ -268,9 +269,24 @@ public class DeclareSpringComponentsApp {
         // TODO: read later
 
 
+        System.out.println("\n--------------------------");
+        System.out.println("Spring AOP - MethodInterceptor & ProxyFactory");
+        System.out.println("--------------------------\n");
 
+        var targetAgent = new Agent();
 
+        var proxyFactory = new ProxyFactory();
+        proxyFactory.addAdvice(new AgentDecorator());
+        proxyFactory.setTarget(targetAgent);
+        var proxiedAgent = (Agent) proxyFactory.getProxy();
 
+        System.out.println("Normal agent:");
+        targetAgent.speak();
+        System.out.println();
+
+        System.out.println("Proxied agent:");
+        proxiedAgent.speak();
+        System.out.println();
 
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
