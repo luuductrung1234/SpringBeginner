@@ -8,8 +8,13 @@ import com.learn.moneytransfer.repositories.AccountRepository;
 import com.learn.moneytransfer.views.PaymentRequest;
 import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
+import com.learn.simpleconsoleapp.models.Agent;
+import com.learn.simpleconsoleapp.seedworks.AgentDecorator;
+import com.learn.simpleconsoleapp.seedworks.SecurityAdvice;
+import com.learn.simpleconsoleapp.seedworks.SimpleBeforeAdvice;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
+import com.learn.simpleconsoleapp.services.SecurityManager;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.PropertyValue;
@@ -276,7 +281,7 @@ public class DeclareSpringComponentsApp {
         var targetAgent = new Agent();
 
         var proxyFactory = new ProxyFactory();
-        proxyFactory.addAdvice(new AgentDecorator());
+        proxyFactory.addAdvice(new AgentDecorator()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
         proxyFactory.setTarget(targetAgent);
         var proxiedAgent = (Agent) proxyFactory.getProxy();
 
@@ -287,6 +292,43 @@ public class DeclareSpringComponentsApp {
         System.out.println("Proxied agent:");
         proxiedAgent.speak();
         System.out.println();
+
+
+        System.out.println("\n--------------------------");
+        System.out.println("Spring AOP - BeforeAdvice");
+        System.out.println("--------------------------\n");
+
+        proxyFactory = new ProxyFactory();
+        proxyFactory.addAdvice(new SimpleBeforeAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+        proxyFactory.setTarget(targetAgent);
+
+        proxiedAgent = (Agent) proxyFactory.getProxy();
+
+        System.out.println("Proxied agent:");
+        proxiedAgent.speak();
+        System.out.println();
+        proxiedAgent.shoot(); // the DefaultPointcutAdvisor will apply advice to all methods of advised object
+        System.out.println();
+
+        var secretBean = new SecretBean();
+
+        proxyFactory = new ProxyFactory();
+        proxyFactory.addAdvice(new SecurityAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+        proxyFactory.setTarget(secretBean);
+
+        var proxiedSecretBean = (SecretBean) proxyFactory.getProxy();
+
+        var securityManager = new SecurityManager();
+
+        securityManager.login("John", "pwd");
+        proxiedSecretBean.writeSecretMessage();
+        securityManager.logout();
+
+        try {
+            proxiedSecretBean.writeSecretMessage();
+        } catch (SecurityException ex) {
+            System.out.println(ex.getMessage());
+        }
 
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
