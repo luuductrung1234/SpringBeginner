@@ -9,9 +9,8 @@ import com.learn.moneytransfer.views.PaymentRequest;
 import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.models.Agent;
-import com.learn.simpleconsoleapp.seedworks.AgentDecorator;
-import com.learn.simpleconsoleapp.seedworks.SecurityAdvice;
-import com.learn.simpleconsoleapp.seedworks.SimpleBeforeAdvice;
+import com.learn.simpleconsoleapp.seedworks.*;
+import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
 import com.learn.simpleconsoleapp.services.SecurityManager;
@@ -326,6 +325,26 @@ public class DeclareSpringComponentsApp {
 
         try {
             proxiedSecretBean.writeSecretMessage();
+        } catch (SecurityException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        System.out.println("\n--------------------------");
+        System.out.println("Spring AOP - AfterAdvice");
+        System.out.println("--------------------------\n");
+
+        var keyGenerator = new KeyGenerator();
+
+        proxyFactory = new ProxyFactory();
+        proxyFactory.addAdvice(new SimpleAfterReturningAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+        proxyFactory.addAdvice(new WeakKeyCheckAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+        proxyFactory.setTarget(keyGenerator);
+
+        var proxiedKeyGenerator = (KeyGenerator) proxyFactory.getProxy();
+
+        try {
+            var key = proxiedKeyGenerator.getKey();
+            System.out.println("Generated Key: " + key);
         } catch (SecurityException ex) {
             System.out.println(ex.getMessage());
         }
