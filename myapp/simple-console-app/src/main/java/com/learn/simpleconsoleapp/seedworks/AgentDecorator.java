@@ -4,8 +4,10 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
 /**
- * {@link MethodInterceptor} interface is a standard AOP Alliance interface for implementating
- * around advice for method invocation joinpoints.
+ * {@link MethodInterceptor} interface is a standard AOP Alliance interface for implementing
+ * Around Advice for method invocation joinpoints.
+ *
+ * @see com.learn.simpleconsoleapp.models.Agent
  */
 public class AgentDecorator implements MethodInterceptor {
     @Override

@@ -350,6 +350,19 @@ public class DeclareSpringComponentsApp {
         }
 
 
+        System.out.println("\n--------------------------");
+        System.out.println("Spring AOP - AroundAdvice");
+        System.out.println("--------------------------\n");
+
+        proxyFactory = new ProxyFactory();
+        proxyFactory.addAdvice(new AgentProfilingInterceptor()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+        proxyFactory.setTarget(targetAgent);
+        proxiedAgent = (Agent) proxyFactory.getProxy();
+
+        proxiedAgent.doingMission();
+
+
+
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
     }
 }
