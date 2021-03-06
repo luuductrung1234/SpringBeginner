@@ -1,8 +1,11 @@
 package com.learn.simpleconsoleapp.models;
 
+import com.learn.simpleconsoleapp.seedworks.advices.AgentDecorator;
+import com.learn.simpleconsoleapp.seedworks.advices.AgentProfilingInterceptor;
+
 /**
- * @see com.learn.simpleconsoleapp.seedworks.AgentDecorator
- * @see com.learn.simpleconsoleapp.seedworks.AgentProfilingInterceptor
+ * @see AgentDecorator
+ * @see AgentProfilingInterceptor
  */
 public class Agent {
     public void speak() {

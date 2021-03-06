@@ -1,4 +1,4 @@
-package com.learn.simpleconsoleapp.seedworks;
+package com.learn.simpleconsoleapp.seedworks.advices;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

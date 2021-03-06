@@ -9,7 +9,7 @@ import com.learn.moneytransfer.views.PaymentRequest;
 import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.models.Agent;
-import com.learn.simpleconsoleapp.seedworks.*;
+import com.learn.simpleconsoleapp.seedworks.advices.*;
 import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;

@@ -1,4 +1,4 @@
-package com.learn.simpleconsoleapp.seedworks;
+package com.learn.simpleconsoleapp.seedworks.advices;
 
 import com.learn.simpleconsoleapp.services.KeyGenerator;
 import org.springframework.aop.AfterReturningAdvice;

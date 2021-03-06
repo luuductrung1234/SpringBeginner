@@ -1,6 +1,7 @@
 package com.learn.simpleconsoleapp.services;
 
 import com.learn.simpleconsoleapp.models.UserInfo;
+import com.learn.simpleconsoleapp.seedworks.advices.SecurityAdvice;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
  *
  * @see com.learn.simpleconsoleapp.models.UserInfo
  * @see com.learn.simpleconsoleapp.beans.SecretBean
- * @see com.learn.simpleconsoleapp.seedworks.SecurityAdvice
+ * @see SecurityAdvice
  */
 @Service
 @Scope("prototype")

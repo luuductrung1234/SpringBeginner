@@ -1,5 +1,6 @@
 package com.learn.simpleconsoleapp.services;
 
+import com.learn.simpleconsoleapp.seedworks.advices.WeakKeyCheckAdvice;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
@@ -7,7 +8,7 @@ import java.util.Random;
 /**
  * Just simulate a cryptographic key generator, and randomly generate a weak key
  *
- * @see com.learn.simpleconsoleapp.seedworks.WeakKeyCheckAdvice
+ * @see WeakKeyCheckAdvice
  */
 @Service
 public class KeyGenerator {
