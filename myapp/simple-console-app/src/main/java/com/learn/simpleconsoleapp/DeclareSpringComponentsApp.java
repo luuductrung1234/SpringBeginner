@@ -10,6 +10,7 @@ import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.models.Agent;
 import com.learn.simpleconsoleapp.seedworks.advices.*;
+import com.learn.simpleconsoleapp.seedworks.pointcuts.BetterSingerHighRentDynamicPointcut;
 import com.learn.simpleconsoleapp.seedworks.pointcuts.GreatSingerSingingStaticPointcut;
 import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
@@ -296,128 +297,188 @@ public class DeclareSpringComponentsApp {
 
         // Spring AOP
         {
-            System.out.println("\n--------------------------");
-            System.out.println("Spring AOP - MethodInterceptor & ProxyFactory");
-            System.out.println("--------------------------\n");
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - MethodInterceptor & ProxyFactory");
+                System.out.println("--------------------------\n");
 
-            var targetAgent = new Agent();
+                var targetAgent = new Agent();
 
-            var proxyFactory = new ProxyFactory();
-            proxyFactory.addAdvice(new AgentDecorator()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
-            proxyFactory.setTarget(targetAgent);
-            var proxiedAgent = (Agent) proxyFactory.getProxy();
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvice(new AgentDecorator()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+                proxyFactory.setTarget(targetAgent);
+                var proxiedAgent = (Agent) proxyFactory.getProxy();
 
-            System.out.println("Normal agent:");
-            targetAgent.speak();
-            System.out.println();
+                System.out.println("Normal agent:");
+                targetAgent.speak();
+                System.out.println();
 
-            System.out.println("Proxied agent:");
-            proxiedAgent.speak();
-            System.out.println();
+                System.out.println("Proxied agent:");
+                proxiedAgent.speak();
+                System.out.println();
+            }
 
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - BeforeAdvice");
+                System.out.println("--------------------------\n");
 
-            System.out.println("\n--------------------------");
-            System.out.println("Spring AOP - BeforeAdvice");
-            System.out.println("--------------------------\n");
+                var targetAgent = new Agent();
 
-            proxyFactory = new ProxyFactory();
-            proxyFactory.addAdvice(new SimpleBeforeAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
-            proxyFactory.setTarget(targetAgent);
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvice(new SimpleBeforeAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+                proxyFactory.setTarget(targetAgent);
 
-            proxiedAgent = (Agent) proxyFactory.getProxy();
+                var proxiedAgent = (Agent) proxyFactory.getProxy();
 
-            System.out.println("Proxied agent:");
-            proxiedAgent.speak();
-            System.out.println();
-            proxiedAgent.shoot(); // the DefaultPointcutAdvisor will apply advice to all methods of advised object
-            System.out.println();
+                System.out.println("Proxied agent:");
+                proxiedAgent.speak();
+                System.out.println();
+                proxiedAgent.shoot(); // the DefaultPointcutAdvisor will apply advice to all methods of advised object
+                System.out.println();
 
-            var secretBean = new SecretBean();
+                var secretBean = new SecretBean();
 
-            proxyFactory = new ProxyFactory();
-            proxyFactory.addAdvice(new SecurityAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
-            proxyFactory.setTarget(secretBean);
+                proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvice(new SecurityAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+                proxyFactory.setTarget(secretBean);
 
-            var proxiedSecretBean = (SecretBean) proxyFactory.getProxy();
+                var proxiedSecretBean = (SecretBean) proxyFactory.getProxy();
 
-            var securityManager = new SecurityManager();
+                var securityManager = new SecurityManager();
 
-            securityManager.login("John", "pwd");
-            proxiedSecretBean.writeSecretMessage();
-            securityManager.logout();
-
-            try {
+                securityManager.login("John", "pwd");
                 proxiedSecretBean.writeSecretMessage();
-            } catch (SecurityException ex) {
-                System.out.println(ex.getMessage());
+                securityManager.logout();
+
+                try {
+                    proxiedSecretBean.writeSecretMessage();
+                } catch (SecurityException ex) {
+                    System.out.println(ex.getMessage());
+                }
             }
 
-            System.out.println("\n--------------------------");
-            System.out.println("Spring AOP - AfterAdvice");
-            System.out.println("--------------------------\n");
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - AfterAdvice");
+                System.out.println("--------------------------\n");
 
-            var keyGenerator = new KeyGenerator();
+                var keyGenerator = new KeyGenerator();
 
-            proxyFactory = new ProxyFactory();
-            proxyFactory.addAdvice(new SimpleAfterReturningAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
-            proxyFactory.addAdvice(new WeakKeyCheckAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
-            proxyFactory.setTarget(keyGenerator);
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvice(new SimpleAfterReturningAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+                proxyFactory.addAdvice(new WeakKeyCheckAdvice()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+                proxyFactory.setTarget(keyGenerator);
 
-            var proxiedKeyGenerator = (KeyGenerator) proxyFactory.getProxy();
+                var proxiedKeyGenerator = (KeyGenerator) proxyFactory.getProxy();
 
-            try {
-                var key = proxiedKeyGenerator.getKey();
-                System.out.println("Generated Key: " + key);
-            } catch (SecurityException ex) {
-                System.out.println(ex.getMessage());
+                try {
+                    var key = proxiedKeyGenerator.getKey();
+                    System.out.println("Generated Key: " + key);
+                } catch (SecurityException ex) {
+                    System.out.println(ex.getMessage());
+                }
             }
 
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - AroundAdvice");
+                System.out.println("--------------------------\n");
 
-            System.out.println("\n--------------------------");
-            System.out.println("Spring AOP - AroundAdvice");
-            System.out.println("--------------------------\n");
+                var targetAgent = new Agent();
 
-            proxyFactory = new ProxyFactory();
-            proxyFactory.addAdvice(new AgentProfilingInterceptor()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
-            proxyFactory.setTarget(targetAgent);
-            proxiedAgent = (Agent) proxyFactory.getProxy();
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvice(new AgentProfilingInterceptor()); // ProxyFactory will wrap the given Advice with DefaultPointcutAdvisor
+                proxyFactory.setTarget(targetAgent);
+                var proxiedAgent = (Agent) proxyFactory.getProxy();
 
-            proxiedAgent.doingMission();
-
-
-            System.out.println("\n--------------------------");
-            System.out.println("Spring AOP - Static Pointcut - StaticMethodMatcherPointcut");
-            System.out.println("--------------------------\n");
-
-            var betterSinger = new BetterSinger();
-            var greatSinger = new GreatSinger();
-
-            // Spring Advisor is a representation of Aspect
-            // Spring Advisor is a coupling of Advice and Pointcuts
-            var customAdvisor = new DefaultPointcutAdvisor(
-                    new GreatSingerSingingStaticPointcut(), new ConsoleLoggingAdvice());
-
-            proxyFactory = new ProxyFactory();
-            proxyFactory.addAdvisor(customAdvisor);
-            proxyFactory.setTarget(betterSinger);
-            var proxiedBetterSinger = (BetterSinger) proxyFactory.getProxy();
-
-            proxyFactory = new ProxyFactory();
-            proxyFactory.addAdvisor(customAdvisor);
-            proxyFactory.setTarget(greatSinger);
-            var proxiedGreatSinger = (GreatSinger) proxyFactory.getProxy();
-
-            proxiedBetterSinger.sing();
-            proxiedGreatSinger.sing();
-            System.out.println();
-
-            for (var entry : GreatSingerSingingStaticPointcut.METHOD_CHECKING_COUNT.entrySet()) {
-                System.out.println("Pointcut method checking process perform:" +
-                        "\n\t - on: " + entry.getKey() +
-                        "\n\t - with: " + entry.getValue() + " (times)");
+                proxiedAgent.doingMission();
             }
 
-            // TODO: Why com.learn.simpleconsoleapp.beans.GreatSinger.sing() checking 2 times?
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Static Pointcut - StaticMethodMatcherPointcut");
+                System.out.println("--------------------------\n");
+
+                // Spring Advisor is a representation of Aspect
+                // Spring Advisor is a coupling of Advice and Pointcuts
+                var customAdvisor = new DefaultPointcutAdvisor(
+                        new GreatSingerSingingStaticPointcut(), new ConsoleLoggingAdvice());
+
+                var betterSinger = new BetterSinger();
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvisor(customAdvisor);
+                proxyFactory.setTarget(betterSinger);
+                var proxiedBetterSinger = (BetterSinger) proxyFactory.getProxy();
+
+                var greatSinger = new GreatSinger();
+                proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvisor(customAdvisor);
+                proxyFactory.setTarget(greatSinger);
+                var proxiedGreatSinger = (GreatSinger) proxyFactory.getProxy();
+
+                proxiedBetterSinger.sing();
+                proxiedGreatSinger.sing();
+                System.out.println();
+
+                for (var entry : GreatSingerSingingStaticPointcut.METHOD_CHECKING_COUNT.entrySet()) {
+                    System.out.println("Pointcut method checking process perform:" +
+                            "\n\t - on: " + entry.getKey() +
+                            "\n\t - with: " + entry.getValue() + " (times)");
+                }
+
+                // TODO: Why "sing()" checking 2 times?
+                // answer: one during the initial phase when all methods are checked
+                // and another when it is first invoked.
+            }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Dynamic Pointcut - DynamicMethodMatcherPointcut");
+                System.out.println("--------------------------\n");
+
+                // Spring Advisor is a representation of Aspect
+                // Spring Advisor is a coupling of Advice and Pointcuts
+                var customAdvisor = new DefaultPointcutAdvisor(
+                        new BetterSingerHighRentDynamicPointcut(), new ConsoleLoggingAdvice());
+
+                var betterSinger = new BetterSinger();
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvisor(customAdvisor);
+                proxyFactory.setTarget(betterSinger);
+                var proxiedBetterSinger = (BetterSinger) proxyFactory.getProxy();
+
+                var greatSinger = new GreatSinger();
+                proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvisor(customAdvisor);
+                proxyFactory.setTarget(greatSinger);
+                var proxiedGreatSinger = (GreatSinger) proxyFactory.getProxy();
+
+                proxiedBetterSinger.rent(800);
+                proxiedGreatSinger.rent(2000);
+                proxiedBetterSinger.rent(1200);
+                proxiedBetterSinger.rent(780);
+                proxiedBetterSinger.rent(2080);
+
+                System.out.println();
+
+                for (var entry : BetterSingerHighRentDynamicPointcut.METHOD_STATIC_CHECKING_COUNT.entrySet()) {
+                    System.out.println("Pointcut method static-checking process perform:" +
+                            "\n\t - on: " + entry.getKey() +
+                            "\n\t - with: " + entry.getValue() + " (times)");
+                }
+
+                System.out.println();
+
+                for (var entry : BetterSingerHighRentDynamicPointcut.METHOD_DYNAMIC_CHECKING_COUNT.entrySet()) {
+                    System.out.println("Pointcut method dynamic-checking process perform:" +
+                            "\n\t - on: " + entry.getKey() +
+                            "\n\t - with: " + entry.getValue() + " (times)");
+                }
+
+                // because of static-check was overridden, static-check for "rent()" occur 2 times
+                // and dynamic-check occur 4 times
+            }
         }
 
 

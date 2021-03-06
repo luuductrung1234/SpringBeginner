@@ -17,6 +17,7 @@ public class Singer {
     private String lyric;
     private String lyricFilePath;
     private String createdBy;
+    private float salary;
 
     public void init() throws Exception {
         System.out.println("[Initializing bean] " + super.toString() + " . . .\n");
@@ -61,6 +62,10 @@ public class Singer {
         System.out.println(lyric);
     }
 
+    public void rent(float salary) {
+        this.salary = salary;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -79,6 +84,6 @@ public class Singer {
 
     @Override
     public String toString() {
-        return "\n\t\tName: " + name + "\n\t\tAge: " + age + "\n\t\tLyric to sing: " + lyric + "\n\t\tCreated by: " + createdBy;
+        return "\n\t\tName: " + name + "\n\t\tAge: " + age + "\n\t\tLyric to sing: " + lyric + "\n\t\tSalary: " + salary + "\n\t\tCreated by: " + createdBy;
     }
 }
