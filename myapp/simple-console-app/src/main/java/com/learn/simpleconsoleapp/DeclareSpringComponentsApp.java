@@ -18,6 +18,7 @@ import com.learn.simpleconsoleapp.services.MessageRenderer;
 import com.learn.simpleconsoleapp.services.SecurityManager;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.support.JdkRegexpMethodPointcut;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.PropertyValue;
 import org.springframework.beans.factory.BeanCreationException;
@@ -478,6 +479,26 @@ public class DeclareSpringComponentsApp {
 
                 // because of static-check was overridden, static-check for "rent()" occur 2 times
                 // and dynamic-check occur 4 times
+            }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Static Pointcut - JdkRegexMethodPointcut");
+                System.out.println("--------------------------\n");
+
+                var singer = new BetterSinger();
+
+                var jdkRegexPointcut = new JdkRegexpMethodPointcut();
+                jdkRegexPointcut.setPattern(".*sing.*");
+
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvisor(new DefaultPointcutAdvisor(jdkRegexPointcut, new ConsoleLoggingAdvice()));
+                proxyFactory.setTarget(singer);
+
+                var proxiedSinger = (BetterSinger) proxyFactory.getProxy();
+
+                proxiedSinger.rent(1000);
+                proxiedSinger.sing();
             }
         }
 
