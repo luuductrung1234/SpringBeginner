@@ -16,6 +16,7 @@ import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
 import com.learn.simpleconsoleapp.services.SecurityManager;
+import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
@@ -493,6 +494,26 @@ public class DeclareSpringComponentsApp {
 
                 var proxyFactory = new ProxyFactory();
                 proxyFactory.addAdvisor(new DefaultPointcutAdvisor(jdkRegexPointcut, new ConsoleLoggingAdvice()));
+                proxyFactory.setTarget(singer);
+
+                var proxiedSinger = (BetterSinger) proxyFactory.getProxy();
+
+                proxiedSinger.rent(1000);
+                proxiedSinger.sing();
+            }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - AspectJ Pointcut - AspectJExpressPointcut");
+                System.out.println("--------------------------\n");
+
+                var singer = new BetterSinger();
+
+                var aspectjExpressionPointcut = new AspectJExpressionPointcut();
+                aspectjExpressionPointcut.setExpression("execution(* sing*(..))");
+
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvisor(new DefaultPointcutAdvisor(aspectjExpressionPointcut, new ConsoleLoggingAdvice()));
                 proxyFactory.setTarget(singer);
 
                 var proxiedSinger = (BetterSinger) proxyFactory.getProxy();
