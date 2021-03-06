@@ -1,5 +1,6 @@
 package com.learn.simpleconsoleapp.beans;
 
+import com.learn.simpleconsoleapp.seedworks.annotation.NeedLogging;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,5 +18,10 @@ public class BetterSinger extends Singer {
     public void rent(float salary) {
         System.out.println("BETTER SINGER dealing salary");
         super.rent(salary * incomePercent);
+    }
+
+    @NeedLogging
+    public void setupShow(){
+        System.out.println("BETTER SINGER setup a show");
     }
 }

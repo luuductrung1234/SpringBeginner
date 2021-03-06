@@ -10,6 +10,7 @@ import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.models.Agent;
 import com.learn.simpleconsoleapp.seedworks.advices.*;
+import com.learn.simpleconsoleapp.seedworks.annotation.NeedLogging;
 import com.learn.simpleconsoleapp.seedworks.pointcuts.BetterSingerHighRentDynamicPointcut;
 import com.learn.simpleconsoleapp.seedworks.pointcuts.GreatSingerSingingStaticPointcut;
 import com.learn.simpleconsoleapp.services.KeyGenerator;
@@ -20,6 +21,7 @@ import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
+import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.PropertyValue;
 import org.springframework.beans.factory.BeanCreationException;
@@ -519,6 +521,26 @@ public class DeclareSpringComponentsApp {
                 var proxiedSinger = (BetterSinger) proxyFactory.getProxy();
 
                 proxiedSinger.rent(1000);
+                proxiedSinger.sing();
+            }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Annotation Matching Pointcut");
+                System.out.println("--------------------------\n");
+
+                var singer = new BetterSinger();
+
+                var annotationMatchingPointcut = AnnotationMatchingPointcut.forMethodAnnotation(NeedLogging.class);
+
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.addAdvisor(new DefaultPointcutAdvisor(annotationMatchingPointcut, new ConsoleLoggingAdvice()));
+                proxyFactory.setTarget(singer);
+
+                var proxiedSinger = (BetterSinger) proxyFactory.getProxy();
+
+                proxiedSinger.rent(1000);
+                proxiedSinger.setupShow();
                 proxiedSinger.sing();
             }
         }
