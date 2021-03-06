@@ -10,11 +10,13 @@ import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.models.Agent;
 import com.learn.simpleconsoleapp.seedworks.advices.*;
+import com.learn.simpleconsoleapp.seedworks.pointcuts.GreatSingerSingingStaticPointcut;
 import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
 import com.learn.simpleconsoleapp.services.SecurityManager;
 import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.PropertyValue;
 import org.springframework.beans.factory.BeanCreationException;
@@ -381,6 +383,41 @@ public class DeclareSpringComponentsApp {
             proxiedAgent = (Agent) proxyFactory.getProxy();
 
             proxiedAgent.doingMission();
+
+
+            System.out.println("\n--------------------------");
+            System.out.println("Spring AOP - Static Pointcut - StaticMethodMatcherPointcut");
+            System.out.println("--------------------------\n");
+
+            var betterSinger = new BetterSinger();
+            var greatSinger = new GreatSinger();
+
+            // Spring Advisor is a representation of Aspect
+            // Spring Advisor is a coupling of Advice and Pointcuts
+            var customAdvisor = new DefaultPointcutAdvisor(
+                    new GreatSingerSingingStaticPointcut(), new ConsoleLoggingAdvice());
+
+            proxyFactory = new ProxyFactory();
+            proxyFactory.addAdvisor(customAdvisor);
+            proxyFactory.setTarget(betterSinger);
+            var proxiedBetterSinger = (BetterSinger) proxyFactory.getProxy();
+
+            proxyFactory = new ProxyFactory();
+            proxyFactory.addAdvisor(customAdvisor);
+            proxyFactory.setTarget(greatSinger);
+            var proxiedGreatSinger = (GreatSinger) proxyFactory.getProxy();
+
+            proxiedBetterSinger.sing();
+            proxiedGreatSinger.sing();
+            System.out.println();
+
+            for (var entry : GreatSingerSingingStaticPointcut.METHOD_CHECKING_COUNT.entrySet()) {
+                System.out.println("Pointcut method checking process perform:" +
+                        "\n\t - on: " + entry.getKey() +
+                        "\n\t - with: " + entry.getValue() + " (times)");
+            }
+
+            // TODO: Why com.learn.simpleconsoleapp.beans.GreatSinger.sing() checking 2 times?
         }
 
 
