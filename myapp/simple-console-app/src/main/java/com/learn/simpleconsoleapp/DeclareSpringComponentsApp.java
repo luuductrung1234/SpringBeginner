@@ -13,11 +13,14 @@ import com.learn.simpleconsoleapp.seedworks.advices.*;
 import com.learn.simpleconsoleapp.seedworks.annotation.NeedLogging;
 import com.learn.simpleconsoleapp.seedworks.pointcuts.BetterSingerHighRentDynamicPointcut;
 import com.learn.simpleconsoleapp.seedworks.pointcuts.GreatSingerSingingStaticPointcut;
+import com.learn.simpleconsoleapp.seedworks.pointcuts.SupervisorReviewStaticPointcut;
 import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
 import com.learn.simpleconsoleapp.services.SecurityManager;
+import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
+import org.springframework.aop.framework.Advised;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
@@ -480,8 +483,9 @@ public class DeclareSpringComponentsApp {
                             "\n\t - with: " + entry.getValue() + " (times)");
                 }
 
-                // because of static-check was overridden, static-check for "rent()" occur 2 times
-                // and dynamic-check occur 4 times
+                // Static-Check for "rent()" occur 2 times, one during the initial phase
+                // when all methods are checked and another when it is first invoked.
+                // Dynamic-Check occur 4 times
             }
 
             {
@@ -543,9 +547,100 @@ public class DeclareSpringComponentsApp {
                 proxiedSinger.setupShow();
                 proxiedSinger.sing();
             }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Proxies");
+                System.out.println("--------------------------\n");
+
+                var singer = new BetterSinger();
+
+                var advisor =  new DefaultPointcutAdvisor(
+                        new SupervisorReviewStaticPointcut(), new NoOpBeforeAdvice());
+
+                runCglibTests(advisor, singer);
+                runCglibFrozenTests(advisor, singer);
+                runJdkTests(advisor, singer);
+            }
         }
 
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
+    }
+
+    private static void runCglibTests(Advisor advisor, Supervisor target) {
+        ProxyFactory pf = new ProxyFactory();
+        pf.setProxyTargetClass(true);
+        pf.setTarget(target);
+        pf.addAdvisor(advisor);
+        System.out.println("Running CGLIB (Standard) Tests");
+        test(pf.getProxy());
+    }
+
+    private static void runCglibFrozenTests(Advisor advisor, Supervisor target) {
+        ProxyFactory pf = new ProxyFactory();
+        pf.setProxyTargetClass(true);
+        pf.setTarget(target);
+        pf.addAdvisor(advisor);
+        pf.setFrozen(true);
+        System.out.println("Running CGLIB (Frozen) Tests");
+        test(pf.getProxy());
+    }
+
+    private static void runJdkTests(Advisor advisor, Supervisor target) {
+        ProxyFactory pf = new ProxyFactory();
+        pf.setTarget(target);
+        pf.addAdvisor(advisor);
+        pf.setInterfaces(Supervisor.class);
+        System.out.println("Running JDK Tests");
+        test(pf.getProxy());
+    }
+
+    private static void test(Object proxiedSupervisor) {
+        long before = 0;
+        long after = 0;
+
+        var supervisor = (Supervisor) proxiedSupervisor;
+
+        System.out.println("Testing Advised Method");
+        before = System.currentTimeMillis();
+        for(int x = 0; x < 500000; x++) {
+            supervisor.review();
+        }
+        after = System.currentTimeMillis();
+        System.out.println("Took " + (after - before) + " ms");
+
+        System.out.println("Testing Unadvised Method");
+        before = System.currentTimeMillis();
+        for(int x = 0; x < 500000; x++) {
+            supervisor.training();
+        }
+        after = System.currentTimeMillis();
+        System.out.println("Took " + (after - before) + " ms");
+
+        System.out.println("Testing equals() Method");
+        before = System.currentTimeMillis();
+        for(int x = 0; x < 500000; x++) {
+            supervisor.equals(supervisor);
+        }
+        after = System.currentTimeMillis();
+        System.out.println("Took " + (after - before) + " ms");
+
+        System.out.println("Testing hashCode() Method");
+        before = System.currentTimeMillis();
+        for(int x = 0; x < 500000; x++) {
+            supervisor.hashCode();
+        }
+        after = System.currentTimeMillis();
+        System.out.println("Took " + (after - before) + " ms");
+
+        System.out.println("Testing method on Advised Interface");
+        before = System.currentTimeMillis();
+        for(int x = 0; x < 500000; x++) {
+            ((Advised) supervisor).getTargetClass();
+        }
+        after = System.currentTimeMillis();
+        System.out.println("Took " + (after - before) + " ms");
+        System.out.println("\n");
     }
 }

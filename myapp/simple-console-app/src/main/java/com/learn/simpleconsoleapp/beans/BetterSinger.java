@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Trophy(name = {"grammy", "platinum disk"})
-public class BetterSinger extends Singer {
+public class BetterSinger extends Singer implements Supervisor {
     private String lyric = "We found a message in a bottle we were drinking";
     private float incomePercent = 0.7f;
 
@@ -21,7 +21,17 @@ public class BetterSinger extends Singer {
     }
 
     @NeedLogging
-    public void setupShow(){
+    public void setupShow() {
         System.out.println("BETTER SINGER setup a show");
+    }
+
+    @Override
+    public void review() {
+        // No-op
+    }
+
+    @Override
+    public void training() {
+        // No-op
     }
 }
