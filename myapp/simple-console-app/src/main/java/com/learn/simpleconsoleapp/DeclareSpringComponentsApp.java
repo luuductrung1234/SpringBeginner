@@ -559,14 +559,19 @@ public class DeclareSpringComponentsApp {
                 var advisor = new DefaultPointcutAdvisor(
                         new SupervisorReviewStaticPointcut(), new NoOpBeforeAdvice());
 
-                runCglibTests(advisor, singer);
-                runCglibFrozenTests(advisor, singer);
-                runJdkTests(advisor, singer);
+                System.out.println("Running CGLIB (Standard) Tests");
+                proxyPerformanceTest(proxyWithCglib(advisor, singer));
+
+                System.out.println("Running CGLIB (Frozen) Tests");
+                proxyPerformanceTest(proxyWithCglibFrozen(advisor, singer));
+
+                System.out.println("Running JDK Tests");
+                proxyPerformanceTest(proxyWithJdk(advisor, singer));
             }
 
             {
                 System.out.println("\n--------------------------");
-                System.out.println("Spring AOP - Advanced Pointcut - Control Flow Pointcut");
+                System.out.println("Spring AOP - Advanced Pointcut - ControlFlowPointcut");
                 System.out.println("--------------------------\n");
 
                 var singer = new BetterSinger();
@@ -604,32 +609,29 @@ public class DeclareSpringComponentsApp {
         singer.rent(2000);
     }
 
-    private static void runCglibTests(Advisor advisor, Supervisor target) {
+    private static <T> Object proxyWithCglib(Advisor advisor, T target) {
         ProxyFactory pf = new ProxyFactory();
         pf.setProxyTargetClass(true);
         pf.setTarget(target);
         pf.addAdvisor(advisor);
-        System.out.println("Running CGLIB (Standard) Tests");
-        test(pf.getProxy());
+        return pf.getProxy();
     }
 
-    private static void runCglibFrozenTests(Advisor advisor, Supervisor target) {
+    private static <T> Object proxyWithCglibFrozen(Advisor advisor, T target) {
         ProxyFactory pf = new ProxyFactory();
         pf.setProxyTargetClass(true);
         pf.setTarget(target);
         pf.addAdvisor(advisor);
         pf.setFrozen(true);
-        System.out.println("Running CGLIB (Frozen) Tests");
-        test(pf.getProxy());
+        return pf.getProxy();
     }
 
-    private static void runJdkTests(Advisor advisor, Supervisor target) {
+    private static <T> Object proxyWithJdk(Advisor advisor, T target) {
         ProxyFactory pf = new ProxyFactory();
         pf.setTarget(target);
         pf.addAdvisor(advisor);
         pf.setInterfaces(Supervisor.class);
-        System.out.println("Running JDK Tests");
-        test(pf.getProxy());
+        return pf.getProxy();
     }
 
     /**
@@ -645,7 +647,7 @@ public class DeclareSpringComponentsApp {
      *                          <br/>extend from class {@link Supervisor}
      *                          <br/>and implemented interface {@link Advised}
      */
-    private static void test(Object proxiedSupervisor) {
+    private static void proxyPerformanceTest(Object proxiedSupervisor) {
         long before = 0;
         long after = 0;
 
