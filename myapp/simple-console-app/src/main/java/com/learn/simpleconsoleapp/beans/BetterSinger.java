@@ -16,7 +16,7 @@ public class BetterSinger extends Singer implements Supervisor {
 
     @Override
     public void rent(float salary) {
-        System.out.println("BETTER SINGER dealing salary");
+        System.out.println("BETTER SINGER dealing salary for: $" + salary);
         super.rent(salary * incomePercent);
     }
 

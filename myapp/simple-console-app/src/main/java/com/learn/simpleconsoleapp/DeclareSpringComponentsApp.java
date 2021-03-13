@@ -11,17 +11,18 @@ import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.models.Agent;
 import com.learn.simpleconsoleapp.seedworks.advices.*;
 import com.learn.simpleconsoleapp.seedworks.annotation.NeedLogging;
-import com.learn.simpleconsoleapp.seedworks.pointcuts.BetterSingerHighRentDynamicPointcut;
-import com.learn.simpleconsoleapp.seedworks.pointcuts.GreatSingerSingingStaticPointcut;
-import com.learn.simpleconsoleapp.seedworks.pointcuts.SupervisorReviewStaticPointcut;
+import com.learn.simpleconsoleapp.seedworks.pointcuts.*;
 import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
 import com.learn.simpleconsoleapp.services.MessageRenderer;
 import com.learn.simpleconsoleapp.services.SecurityManager;
 import org.springframework.aop.Advisor;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.MethodMatcher;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.framework.Advised;
 import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.support.ComposablePointcut;
 import org.springframework.aop.support.ControlFlowPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
@@ -592,6 +593,37 @@ public class DeclareSpringComponentsApp {
 
                 System.out.println("\nInvoke Singer methods from runSingerMethods:");
                 app.runSingerMethods(proxiedSinger);
+            }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Advanced Pointcut -  ComposablePointcut");
+                System.out.println("--------------------------\n");
+
+                var singer = new BetterSinger();
+
+                // first, init it own ClassFilter and MethodMatcher
+                var composablePointcut = new ComposablePointcut(ClassFilter.TRUE,
+                        (MethodMatcher) new BetterSingerReceiveMoneyStaticPointcut());
+
+                System.out.println("Union-Compose Pointcuts:");
+                // compose with another pointcut's MethodMatcher
+                composablePointcut.union((MethodMatcher) new BetterSingerSingingStaticPointcut());
+                var proxiedSinger = (BetterSinger) proxyWithCglib(new DefaultPointcutAdvisor(composablePointcut, new ConsoleLoggingAdvice()), singer);
+                proxiedSinger.sing();
+                proxiedSinger.rent(2000);
+
+                // union() mean "or" conditional operand
+
+                System.out.println("\nIntersection-Compose Pointcuts:");
+                // compose with another pointcut's MethodMatcher
+                composablePointcut.intersection((MethodMatcher) new BetterSingerHighRentDynamicPointcut());
+                proxiedSinger = (BetterSinger) proxyWithCglib(new DefaultPointcutAdvisor(composablePointcut, new ConsoleLoggingAdvice()), singer);
+                proxiedSinger.sing();
+                proxiedSinger.rent(500);
+                proxiedSinger.rent(1500);
+
+                // intersection() mean "and" conditional operand
             }
         }
 

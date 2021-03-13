@@ -15,7 +15,7 @@ public class GreatSinger extends Singer {
 
     @Override
     public void rent(float salary) {
-        System.out.println("GREAT SINGER dealing salary");
+        System.out.println("GREAT SINGER dealing salary for: $" + salary);
         super.rent(salary * incomePercent);
     }
 }
