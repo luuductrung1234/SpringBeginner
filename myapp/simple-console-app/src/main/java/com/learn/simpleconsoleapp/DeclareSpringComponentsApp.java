@@ -22,6 +22,7 @@ import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.framework.Advised;
 import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.support.ControlFlowPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
 import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
@@ -555,17 +556,52 @@ public class DeclareSpringComponentsApp {
 
                 var singer = new BetterSinger();
 
-                var advisor =  new DefaultPointcutAdvisor(
+                var advisor = new DefaultPointcutAdvisor(
                         new SupervisorReviewStaticPointcut(), new NoOpBeforeAdvice());
 
                 runCglibTests(advisor, singer);
                 runCglibFrozenTests(advisor, singer);
                 runJdkTests(advisor, singer);
             }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Advanced Pointcut - Control Flow Pointcut");
+                System.out.println("--------------------------\n");
+
+                var singer = new BetterSinger();
+                var app = new DeclareSpringComponentsApp();
+
+                var controlFlowPointcut = new ControlFlowPointcut(DeclareSpringComponentsApp.class, "runSingerMethods");
+                var advisor = new DefaultPointcutAdvisor(controlFlowPointcut, new ConsoleLoggingAdvice());
+
+                var proxyFactory = new ProxyFactory();
+                proxyFactory.setTarget(singer);
+                proxyFactory.addAdvisor(advisor);
+
+                var proxiedSinger = (BetterSinger) proxyFactory.getProxy();
+
+                System.out.println("Normally invoke Singer methods:");
+                proxiedSinger.sing();
+                proxiedSinger.rent(2000);
+
+                System.out.println("\nInvoke Singer methods from runSingerMethods:");
+                app.runSingerMethods(proxiedSinger);
+            }
         }
 
 
         // -> When application reach this point, ApplicationContext will perform destroy() or shutdown() automatically
+    }
+
+    /**
+     * Wrap a {@link Singer} and run its methods
+     *
+     * @param singer
+     */
+    private void runSingerMethods(Singer singer) {
+        singer.sing();
+        singer.rent(2000);
     }
 
     private static void runCglibTests(Advisor advisor, Supervisor target) {
@@ -596,6 +632,19 @@ public class DeclareSpringComponentsApp {
         test(pf.getProxy());
     }
 
+    /**
+     * Do some performance test for proxied {@link Supervisor}
+     * <ul>
+     *     <li>CGLIB Proxy</li>
+     *     <li>CGLIB Proxy (with frozen config)</li>
+     *     <li>JDK Proxy</li>
+     * </ul>
+     *
+     * @param proxiedSupervisor at runtime its type was enhanced by CGLIB
+     *                          <br/>(with auto generated name like <b>com.learn.simpleconsoleapp.beans.BetterSinger$$EnhancerBySpringCGLIB$$cf61a516</b>)
+     *                          <br/>extend from class {@link Supervisor}
+     *                          <br/>and implemented interface {@link Advised}
+     */
     private static void test(Object proxiedSupervisor) {
         long before = 0;
         long after = 0;
@@ -604,7 +653,7 @@ public class DeclareSpringComponentsApp {
 
         System.out.println("Testing Advised Method");
         before = System.currentTimeMillis();
-        for(int x = 0; x < 500000; x++) {
+        for (int x = 0; x < 500000; x++) {
             supervisor.review();
         }
         after = System.currentTimeMillis();
@@ -612,7 +661,7 @@ public class DeclareSpringComponentsApp {
 
         System.out.println("Testing Unadvised Method");
         before = System.currentTimeMillis();
-        for(int x = 0; x < 500000; x++) {
+        for (int x = 0; x < 500000; x++) {
             supervisor.training();
         }
         after = System.currentTimeMillis();
@@ -620,7 +669,7 @@ public class DeclareSpringComponentsApp {
 
         System.out.println("Testing equals() Method");
         before = System.currentTimeMillis();
-        for(int x = 0; x < 500000; x++) {
+        for (int x = 0; x < 500000; x++) {
             supervisor.equals(supervisor);
         }
         after = System.currentTimeMillis();
@@ -628,7 +677,7 @@ public class DeclareSpringComponentsApp {
 
         System.out.println("Testing hashCode() Method");
         before = System.currentTimeMillis();
-        for(int x = 0; x < 500000; x++) {
+        for (int x = 0; x < 500000; x++) {
             supervisor.hashCode();
         }
         after = System.currentTimeMillis();
@@ -636,7 +685,7 @@ public class DeclareSpringComponentsApp {
 
         System.out.println("Testing method on Advised Interface");
         before = System.currentTimeMillis();
-        for(int x = 0; x < 500000; x++) {
+        for (int x = 0; x < 500000; x++) {
             ((Advised) supervisor).getTargetClass();
         }
         after = System.currentTimeMillis();
