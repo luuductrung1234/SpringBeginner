@@ -21,6 +21,8 @@ import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
 import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
 
+import java.lang.reflect.ParameterizedType;
+
 public class SpringAopApp {
     public static void main(String[] args) {
         {
@@ -388,6 +390,17 @@ public class SpringAopApp {
         singer.rent(2000);
     }
 
+    /**
+     * At build-time, CGLIB enhance type T
+     * <br/>(with auto generated type, name like <b>T$$EnhancerBySpringCGLIB$$cf61a516</b>)
+     * <br/>extend from class T
+     * <br/>and implemented interface {@link Advised}
+     *
+     * @param advisor
+     * @param target
+     * @param <T>
+     * @return
+     */
     private static <T> Object proxyWithCglib(Advisor advisor, T target) {
         ProxyFactory pf = new ProxyFactory();
         pf.setProxyTargetClass(true);
@@ -396,6 +409,17 @@ public class SpringAopApp {
         return pf.getProxy();
     }
 
+    /**
+     * At build-time, CGLIB enhance type T
+     * <br/>(with auto generated type, name like <b>T$$EnhancerBySpringCGLIB$$cf61a516</b>)
+     * <br/>extend from class T
+     * <br/>and implemented interface {@link Advised}
+     *
+     * @param advisor
+     * @param target
+     * @param <T>
+     * @return
+     */
     private static <T> Object proxyWithCglibFrozen(Advisor advisor, T target) {
         ProxyFactory pf = new ProxyFactory();
         pf.setProxyTargetClass(true);
@@ -405,11 +429,21 @@ public class SpringAopApp {
         return pf.getProxy();
     }
 
+    /**
+     * At runtime, JDK not enhance type T,
+     * <br/>It wrap target with com.sun.proxy.Proxy class
+     * <br/>An proxy instance is implement interfaces of class T and interface {@link Advised}
+     *
+     * @param advisor
+     * @param target
+     * @param <T>
+     * @return
+     */
     private static <T> Object proxyWithJdk(Advisor advisor, T target) {
         ProxyFactory pf = new ProxyFactory();
         pf.setTarget(target);
         pf.addAdvisor(advisor);
-        pf.setInterfaces(Supervisor.class);
+        pf.setInterfaces(target.getClass().getInterfaces());
         return pf.getProxy();
     }
 
@@ -421,8 +455,8 @@ public class SpringAopApp {
      *     <li>JDK Proxy</li>
      * </ul>
      *
-     * @param proxiedSupervisor at runtime its type was enhanced by CGLIB
-     *                          <br/>(with auto generated name like <b>com.learn.simpleconsoleapp.beans.BetterSinger$$EnhancerBySpringCGLIB$$cf61a516</b>)
+     * @param proxiedSupervisor at runtime/build-time its type was enhanced by JDK/CGLIB
+     *                          <br/>(with auto generated type, name like <b>com.learn.simpleconsoleapp.beans.BetterSinger$$EnhancerBySpringCGLIB$$cf61a516</b>)
      *                          <br/>extend from class {@link Supervisor}
      *                          <br/>and implemented interface {@link Advised}
      */
