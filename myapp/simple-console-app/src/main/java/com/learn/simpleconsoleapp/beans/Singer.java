@@ -82,6 +82,10 @@ public class Singer {
         this.createdBy = createdBy;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "\n\t\tName: " + name + "\n\t\tAge: " + age + "\n\t\tLyric to sing: " + lyric + "\n\t\tSalary: " + salary + "\n\t\tCreated by: " + createdBy;

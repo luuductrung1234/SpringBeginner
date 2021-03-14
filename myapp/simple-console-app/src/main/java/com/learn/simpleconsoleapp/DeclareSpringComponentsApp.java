@@ -10,7 +10,10 @@ import com.learn.simpleconsoleapp.beans.*;
 import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.simpleconsoleapp.models.Agent;
 import com.learn.simpleconsoleapp.seedworks.advices.*;
+import com.learn.simpleconsoleapp.seedworks.advisor.IsModifiedAdvisor;
 import com.learn.simpleconsoleapp.seedworks.annotation.NeedLogging;
+import com.learn.simpleconsoleapp.seedworks.mixin.IsModified;
+import com.learn.simpleconsoleapp.seedworks.advices.IsModifiedMixinIntroduction;
 import com.learn.simpleconsoleapp.seedworks.pointcuts.*;
 import com.learn.simpleconsoleapp.services.KeyGenerator;
 import com.learn.simpleconsoleapp.services.MessageDigester;
@@ -624,6 +627,40 @@ public class DeclareSpringComponentsApp {
                 proxiedSinger.rent(1500);
 
                 // intersection() mean "and" conditional operand
+            }
+
+            {
+                System.out.println("\n--------------------------");
+                System.out.println("Spring AOP - Introduction");
+                System.out.println("--------------------------\n");
+
+                var singer = new BetterSinger();
+                singer.setName("Thomas Edison");
+
+                var introductionAdvisor = new IsModifiedAdvisor();
+
+                // JDK Proxy generate a proxy only for the introduced interface (not the original class)
+                // This line of code, cast proxy to Singer, error will occur when using JDK Proxy with Introduction
+                var proxiedSinger = (Singer) proxyWithCglib(introductionAdvisor, singer);
+                var proxiedMixin = (IsModified) proxiedSinger;
+
+                System.out.println("Is Singer?  " + (proxiedSinger instanceof Singer));
+                System.out.println("Is BetterSinger?  " + (proxiedSinger instanceof BetterSinger));
+                System.out.println("Has been modified?  " + proxiedMixin.isModified());
+
+                proxiedSinger.setName("Thomas Edison");
+                System.out.println("Has been modified?  " + proxiedMixin.isModified());
+
+                proxiedSinger.setName("Eric Clapton");
+                System.out.println("Has been modified?  " + proxiedMixin.isModified());
+
+                System.out.println();
+
+                for (var entry : IsModifiedMixinIntroduction.TARGET_OBJECT_METHOD_INVOKE_COUNT.entrySet()) {
+                    System.out.println("DelegateIntroductionInterceptor dispatches and delegate method invocation of target object or mixin :" +
+                            "\n\t - on: " + entry.getKey() +
+                            "\n\t - with: " + entry.getValue() + " (times)");
+                }
             }
         }
 
