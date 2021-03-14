@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dummy-beans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money-transfer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/DeclareSpringComponentsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/DeclareSpringComponentsApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,10 +78,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.learn.moneytransfer.publishers" />
       <recent name="com.learn.simpleconsoleapp.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -98,14 +96,14 @@
       <recent name="com.learn.repositories" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.learn.simpleconsoleapp" />
-      <recent name="com.learn.simpleconsoleapp.services" />
-      <recent name="com.learn.dummybeans" />
-      <recent name="com.learn.moneytransfer" />
-      <recent name="com.learn.moneytransfer.services" />
+      <recent name="com.learn.simpleconsoleapp.seedworks.advices" />
+      <recent name="com.learn.simpleconsoleapp.seedworks.advisor" />
+      <recent name="com.learn.simpleconsoleapp.seedworks.advisors" />
+      <recent name="com.learn.simpleconsoleapp.models" />
+      <recent name="com.learn.simpleconsoleapp.seedworks" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DeclareSpringComponentsApp.java - [simple-console-app]">
+  <component name="RunManager" selected="Application.SpringAopApp.java - [simple-console-app]">
     <configuration name="App.java - [simple-console-app]" type="Application" factoryName="Application" temporary="true">
       <envs>
         <env name="my.name" value="McEnany" />
@@ -134,6 +132,15 @@
     </configuration>
     <configuration name="HierarchicalAppContextApp.java - [simple-console-app]" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.HierarchicalAppContextApp" />
+      <module name="simple-console-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringAopApp.java - [simple-console-app]" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.SpringAopApp" />
       <module name="simple-console-app" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,16 +181,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.XmlConfigWithBeanFactoryApp.java - [simple-console-app]" />
       <item itemvalue="Application.DeclareSpringComponentsApp.java - [simple-console-app]" />
+      <item itemvalue="Application.SpringAopApp.java - [simple-console-app]" />
       <item itemvalue="Application.HierarchicalAppContextApp.java - [simple-console-app]" />
+      <item itemvalue="Application.XmlConfigWithBeanFactoryApp.java - [simple-console-app]" />
       <item itemvalue="Application.App.java - [simple-console-app]" />
       <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App.java - [simple-console-app]" />
         <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+        <item itemvalue="Application.App.java - [simple-console-app]" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +224,21 @@
       <workItem from="1609234893921" duration="1865000" />
       <workItem from="1612687104210" duration="2662000" />
       <workItem from="1612932398402" duration="13549000" />
-      <workItem from="1613113815601" duration="32339000" />
+      <workItem from="1613113815601" duration="49201000" />
+      <workItem from="1613568446646" duration="90000" />
+      <workItem from="1613568559181" duration="19377000" />
+      <workItem from="1613875583556" duration="2958000" />
+      <workItem from="1614002434920" duration="2036000" />
+      <workItem from="1614177540453" duration="3099000" />
+      <workItem from="1614262120552" duration="13704000" />
+      <workItem from="1614507747786" duration="2385000" />
+      <workItem from="1614597461498" duration="746000" />
+      <workItem from="1614697924859" duration="2088000" />
+      <workItem from="1614772112246" duration="5090000" />
+      <workItem from="1614945793617" duration="18864000" />
+      <workItem from="1615086371191" duration="4821000" />
+      <workItem from="1615299230432" duration="2079000" />
+      <workItem from="1615603618572" duration="14324000" />
     </task>
     <servers />
   </component>
@@ -231,7 +253,29 @@
           <line>48</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/eventhandlers/AccountEarnBankPointEventHandler.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/seedworks/pointcuts/BetterSingerReceiveMoneyStaticPointcut.java</url>
+          <line>24</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="proxiedSupervisor.getClass().getName()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
