@@ -425,6 +425,25 @@ public class SpringAopApp {
             System.out.println();
             System.out.println("Has been modified? " + proxiedMixin.isModified());
         }
+
+        {
+            System.out.println("\n--------------------------");
+            System.out.println("Spring AOP - aop Namespace with XML Dependency Injection");
+            System.out.println("--------------------------\n");
+
+            var context = new GenericXmlApplicationContext();
+            context.load("classpath:demo/singer-documentary-using-aponamespace-context.xml");
+            context.refresh();
+
+            var documentaristOne = context.getBean("documentaristOne", Documentarist.class);
+            documentaristOne.execute();
+            System.out.println();
+
+            var documentaristTwo = context.getBean("documentaristTwo", Documentarist.class);
+            documentaristTwo.execute();
+            System.out.println();
+            documentaristTwo.execute("Requested lyric . . . 1 2 3 . . Go . . .");
+        }
     }
 
     /**

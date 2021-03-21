@@ -21,6 +21,13 @@ public class Documentarist {
 
     public void execute() {
         singer.sing();
+        singer.sing("Requested lyric blah blah blah...");
+        singer.talk();
+    }
+
+    public void execute(String requestedLyric) {
+        singer.sing();
+        singer.sing(requestedLyric);
         singer.talk();
     }
 }

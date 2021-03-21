@@ -62,6 +62,10 @@ public class Singer {
         System.out.println(lyric);
     }
 
+    public void sing(String requestedLyric) {
+        System.out.println(requestedLyric);
+    }
+
     public void talk() {
         System.out.println("Talk");
     }

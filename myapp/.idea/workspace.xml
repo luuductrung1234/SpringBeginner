@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/DeclareSpringComponentsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/DeclareSpringComponentsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/HierarchicalAppContextApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/HierarchicalAppContextApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/XmlConfigWithBeanFactorApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/XmlConfigWithBeanFactorApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/dummy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/assets/dummy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/spring/child-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/child-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/spring/parent-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/parent-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/spring/xml-bean-factory-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/xml-bean-factory-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/seedworks/advices/ConsoleLoggingAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/seedworks/advices/ConsoleLoggingAdvice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +38,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -165,19 +158,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myapp" />
       <extension name="coverage">
@@ -254,7 +234,7 @@
       <workItem from="1615299230432" duration="2079000" />
       <workItem from="1615603618572" duration="25514000" />
       <workItem from="1615821026288" duration="2553000" />
-      <workItem from="1616292988981" duration="2521000" />
+      <workItem from="1616292988981" duration="11530000" />
     </task>
     <servers />
   </component>
@@ -273,19 +253,6 @@
           <url>file://$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/eventhandlers/AccountEarnBankPointEventHandler.java</url>
           <line>10</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/seedworks/pointcuts/BetterSingerReceiveMoneyStaticPointcut.java</url>
-          <line>24</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java</url>
-          <line>510</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
