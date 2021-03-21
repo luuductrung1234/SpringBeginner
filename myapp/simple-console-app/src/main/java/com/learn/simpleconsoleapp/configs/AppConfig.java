@@ -11,7 +11,8 @@ import org.springframework.context.annotation.*;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
 @Configuration
-@ComponentScan(basePackages = {"com.learn.dummybeans", "com.learn.moneytransfer", "com.learn.simpleconsoleapp"})
+@ComponentScan(basePackages = {"com.learn.dummybeans", "com.learn.moneytransfer", "com.learn.simpleconsoleapp"},
+        excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX, pattern = {"com.learn.simpleconsoleapp.configs.demo.*"})})
 @PropertySource({"classpath:application.properties", "classpath:msf.properties"})
 @ImportResource({"classpath:application-context.xml"})
 @Import(SpringContainerConfig.class)
@@ -29,6 +30,7 @@ public class AppConfig {
     /**
      * NOTICE!
      * {@link ResourceBundleMessageSource} must be define as a bean with name "messageSource" to be detected by Container
+     *
      * @return
      */
     @Bean("messageSource")

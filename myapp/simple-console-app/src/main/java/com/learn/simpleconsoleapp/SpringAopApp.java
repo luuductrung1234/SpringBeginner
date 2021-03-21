@@ -1,6 +1,7 @@
 package com.learn.simpleconsoleapp;
 
 import com.learn.simpleconsoleapp.beans.*;
+import com.learn.simpleconsoleapp.configs.demo.SingerDocumentaryUsingProxyFactoryBeanConfig;
 import com.learn.simpleconsoleapp.models.Agent;
 import com.learn.simpleconsoleapp.seedworks.advices.*;
 import com.learn.simpleconsoleapp.seedworks.advisor.IsModifiedAdvisor;
@@ -20,8 +21,8 @@ import org.springframework.aop.support.ControlFlowPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
 import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
-
-import java.lang.reflect.ParameterizedType;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class SpringAopApp {
     public static void main(String[] args) {
@@ -377,6 +378,52 @@ public class SpringAopApp {
                         "\n\t - on: " + entry.getKey() +
                         "\n\t - with: " + entry.getValue() + " (times)");
             }
+        }
+
+        {
+            System.out.println("\n--------------------------");
+            System.out.println("Spring AOP - ProxyFactoryBean with XML Dependency Injection");
+            System.out.println("--------------------------\n");
+
+            var context = new GenericXmlApplicationContext();
+            context.load("classpath:demo/singer-documentary-using-ProxyFactoryBean-context.xml");
+            context.refresh();
+
+            var documentaristOne = context.getBean("documentaristOne", Documentarist.class);
+            documentaristOne.execute();
+
+            var documentaristTwo = context.getBean("documentaristTwo", Documentarist.class);
+            documentaristTwo.execute();
+
+            var proxiedSingerThree = context.getBean("singerProxyThree", Singer.class);
+            var proxiedMixin = (IsModified) proxiedSingerThree;
+
+            proxiedSingerThree.setName("John Mayer");
+            System.out.println();
+            System.out.println("Has been modified? " + proxiedMixin.isModified());
+
+            proxiedSingerThree.setName("Eric Clapton");
+            System.out.println();
+            System.out.println("Has been modified? " + proxiedMixin.isModified());
+        }
+
+        {
+            System.out.println("\n--------------------------");
+            System.out.println("Spring AOP - ProxyFactoryBean with Java Config Dependency Injection");
+            System.out.println("--------------------------\n");
+
+            var context = new AnnotationConfigApplicationContext(SingerDocumentaryUsingProxyFactoryBeanConfig.class);
+
+            var proxiedSingerThree = context.getBean("singerProxyThree", Singer.class);
+            var proxiedMixin = (IsModified) proxiedSingerThree;
+
+            proxiedSingerThree.setName("John Mayer");
+            System.out.println();
+            System.out.println("Has been modified? " + proxiedMixin.isModified());
+
+            proxiedSingerThree.setName("Eric Clapton");
+            System.out.println();
+            System.out.println("Has been modified? " + proxiedMixin.isModified());
         }
     }
 

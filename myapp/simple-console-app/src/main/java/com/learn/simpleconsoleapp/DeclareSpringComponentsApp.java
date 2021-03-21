@@ -195,7 +195,7 @@ public class DeclareSpringComponentsApp {
                 file.deleteOnExit();
                 Resource res1 = annotationContext.getResource("file://" + file.getPath());
                 System.out.println(res1.getClass() + "\n\t" + res1.getURL().getContent());
-                Resource res2 = annotationContext.getResource("classpath:dummy.txt");
+                Resource res2 = annotationContext.getResource("classpath:assets/dummy.txt");
                 System.out.println(res2.getClass() + "\n\t" + res2.getURL().getContent());
                 Resource res3 = annotationContext.getResource("http://www.google.com");
                 System.out.println(res3.getClass() + "\n\t" + res3.getURL().getContent());

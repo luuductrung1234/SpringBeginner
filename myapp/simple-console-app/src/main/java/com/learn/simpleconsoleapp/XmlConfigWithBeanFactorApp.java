@@ -12,7 +12,7 @@ public class XmlConfigWithBeanFactorApp {
         var beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
 
         beanDefinitionReader.loadBeanDefinitions(
-                new ClassPathResource("spring/xml-bean-factory-config.xml"));
+                new ClassPathResource("demo/xml-bean-factory-config.xml"));
 
         var oracle = beanFactory.getBean(Oracle.class);
         System.out.println(oracle.defineMeaningOfLife());

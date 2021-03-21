@@ -6,11 +6,11 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class HierarchicalAppContextApp {
     public static void main(String... args) {
         GenericXmlApplicationContext parent = new GenericXmlApplicationContext();
-        parent.load("classpath:spring/parent-context.xml");
+        parent.load("classpath:demo/parent-context.xml");
         parent.refresh();
 
         GenericXmlApplicationContext child = new GenericXmlApplicationContext();
-        child.load("classpath:spring/child-context.xml");
+        child.load("classpath:demo/child-context.xml");
         // if we not set parent context, some parent's beans reference in child context will not found
         // it causes an error
         child.setParent(parent);

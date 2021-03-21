@@ -62,6 +62,10 @@ public class Singer {
         System.out.println(lyric);
     }
 
+    public void talk() {
+        System.out.println("Talk");
+    }
+
     public void rent(float salary) {
         this.salary = salary;
     }

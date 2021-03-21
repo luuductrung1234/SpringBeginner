@@ -7,9 +7,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
-    <context:component-scan base-package="com.learn.dummybeans,com.learn.moneytransfer,com.learn.simpleconsoleapp"/>
+    <context:component-scan base-package="com.learn.dummybeans,com.learn.moneytransfer,com.learn.simpleconsoleapp">
+        <context:include-filter type="regex" expression="com.learn.simpleconsoleapp.configs.demo.*"/>
+    </context:component-scan>
 
     <context:property-placeholder location="classpath:application.properties,classpath:msf.properties"/>
+
+    <!-- =====================================
+    Collection Injection
+    ====================================== -->
 
     <util:map id="map" map-class="java.util.HashMap">
         <entry key="someValue">
@@ -35,12 +41,20 @@
         <ref bean="lyricHolder"/>
     </util:list>
 
+    <!-- =====================================
+    Understand Naming Bean
+    ====================================== -->
+
     <bean id="string1" class="java.lang.String"/>
     <bean name="string2" class="java.lang.String"/>
     <bean class="java.lang.String"/>
     <bean class="java.lang.String"/>
     <bean name="jon johnny,jonathan;jim" class="java.lang.String"/>
     <bean id="jon johnny,jonathan;jim" class="java.lang.String"/>
+
+    <!-- =====================================
+    Bean Life-Cycle
+    ====================================== -->
 
     <bean id="singerOne"
           class="com.learn.simpleconsoleapp.beans.Singer"
@@ -78,6 +92,10 @@
           p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerWithJSR250Two.txt"
           p:name="Luiz Castaneda" p:age="22" p:createdBy="XML Configuration"/>
 
+    <!-- =====================================
+    PropertyEditor
+    ====================================== -->
+
     <bean id="builtInSample"
           class="com.learn.simpleconsoleapp.beans.SamplePropertyEditorBean"
           lazy-init="true"
@@ -85,7 +103,7 @@
           p:bytes="John Mayer"
           p:cls="java.lang.String"
           p:trueOrFalse="true"
-          p:stream="dummy.txt"
+          p:stream="assets/dummy.txt"
           p:floatValue="123.45678"
           p:date="05/03/13"
           p:file="#{systemProperties['java.io.tmpdir']}singerOne.txt"
