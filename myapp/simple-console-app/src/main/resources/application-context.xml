@@ -8,7 +8,7 @@
 
 
     <context:component-scan base-package="com.learn.dummybeans,com.learn.moneytransfer,com.learn.simpleconsoleapp">
-        <context:include-filter type="regex" expression="com.learn.simpleconsoleapp.configs.demo.*"/>
+        <context:exclude-filter type="regex" expression="com.learn.simpleconsoleapp.configs.demo.*"/>
     </context:component-scan>
 
     <context:property-placeholder location="classpath:application.properties,classpath:msf.properties"/>

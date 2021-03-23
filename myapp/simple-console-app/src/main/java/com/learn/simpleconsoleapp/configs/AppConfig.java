@@ -2,6 +2,7 @@ package com.learn.simpleconsoleapp.configs;
 
 import com.learn.dummybeans.repositories.MyRepositoryImpl;
 import com.learn.dummybeans.services.TheirService;
+import com.learn.simpleconsoleapp.beans.SimpleSinger;
 import com.learn.simpleconsoleapp.beans.Singer;
 import com.learn.simpleconsoleapp.beans.SingerWithInterface;
 import com.learn.simpleconsoleapp.beans.SingerWithJSR250;
@@ -50,7 +51,7 @@ public class AppConfig {
     @Bean(name = {"singerFour", "singer4th", "singer No.4", "s4"}, initMethod = "init", destroyMethod = "destroy")
     @Lazy
     public Singer singerFour() {
-        var singer = new Singer();
+        var singer = new SimpleSinger();
         singer.setName("TimSell");
         singer.setAge(20);
         singer.setLyricFilePath(tempDir + "singerFour.txt");

@@ -6,10 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/BetterSinger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/BetterSinger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/GreatSinger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/GreatSinger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/seedworks/advices/ConsoleLoggingAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/seedworks/advices/ConsoleLoggingAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-ProxyFactoryBean-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-ProxyFactoryBean-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-aponamespace-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-aponamespace-context.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +46,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -235,6 +243,8 @@
       <workItem from="1615603618572" duration="25514000" />
       <workItem from="1615821026288" duration="2553000" />
       <workItem from="1616292988981" duration="11530000" />
+      <workItem from="1616325210208" duration="9338000" />
+      <workItem from="1616507095665" duration="1162000" />
     </task>
     <servers />
   </component>
@@ -254,15 +264,31 @@
           <line>10</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java</url>
+          <line>416</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="proxiedSupervisor.getClass().getName()" language="JAVA" />
-        <watch expression="((Advised) proxiedSupervisor).isInterfaceProxied(Supervisor.class)" language="JAVA" />
-        <watch expression="proxiedSupervisor.getClass()" language="JAVA" />
-        <watch expression="proxiedSupervisor instanceof Supervisor" language="JAVA" />
-        <watch expression="proxiedSupervisor instanceof BetterSinger" language="JAVA" />
+        <watch expression="johnMayer()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

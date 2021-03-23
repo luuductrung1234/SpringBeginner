@@ -358,7 +358,7 @@ public class SpringAopApp {
 
             // JDK Proxy generate a proxy only for the introduced interface (not the original class)
             // This line of code, cast proxy to Singer, error will occur when using JDK Proxy with Introduction
-            var proxiedSinger = (Singer) proxyWithCglib(introductionAdvisor, singer);
+            var proxiedSinger = (BetterSinger) proxyWithCglib(introductionAdvisor, singer);
             var proxiedMixin = (IsModified) proxiedSinger;
 
             System.out.println("Is Singer?  " + (proxiedSinger instanceof Singer));
@@ -395,7 +395,7 @@ public class SpringAopApp {
             var documentaristTwo = context.getBean("documentaristTwo", Documentarist.class);
             documentaristTwo.execute();
 
-            var proxiedSingerThree = context.getBean("singerProxyThree", Singer.class);
+            var proxiedSingerThree = context.getBean("singerProxyThree", SimpleSinger.class);
             var proxiedMixin = (IsModified) proxiedSingerThree;
 
             proxiedSingerThree.setName("John Mayer");
@@ -414,7 +414,7 @@ public class SpringAopApp {
 
             var context = new AnnotationConfigApplicationContext(SingerDocumentaryUsingProxyFactoryBeanConfig.class);
 
-            var proxiedSingerThree = context.getBean("singerProxyThree", Singer.class);
+            var proxiedSingerThree = context.getBean("singerProxyThree", SimpleSinger.class);
             var proxiedMixin = (IsModified) proxiedSingerThree;
 
             proxiedSingerThree.setName("John Mayer");
@@ -443,6 +443,20 @@ public class SpringAopApp {
             documentaristTwo.execute();
             System.out.println();
             documentaristTwo.execute("Requested lyric . . . 1 2 3 . . Go . . .");
+        }
+
+        {
+            System.out.println("\n--------------------------");
+            System.out.println("Spring AOP - AspectJ-Style Annotations with XML Dependency Injection ");
+            System.out.println("--------------------------\n");
+
+            var context = new GenericXmlApplicationContext();
+            context.load("classpath:demo/singer-documentary-using-aspectj-context.xml");
+            context.refresh();
+            var documentarist = context.getBean(Documentarist.class);
+            documentarist.execute();
+            System.out.println();
+            documentarist.execute("Requested lyric . . . 1 2 3 . . Go . . .");
         }
     }
 

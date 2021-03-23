@@ -1,11 +1,13 @@
 package com.learn.simpleconsoleapp.beans;
 
 import com.learn.simpleconsoleapp.seedworks.annotation.NeedLogging;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("betterSinger")
 @Trophy(name = {"grammy", "platinum disk"})
-public class BetterSinger extends Singer implements Supervisor {
+public class BetterSinger extends SimpleSinger implements Supervisor {
     private String lyric = "We found a message in a bottle we were drinking";
     private float incomePercent = 0.7f;
 

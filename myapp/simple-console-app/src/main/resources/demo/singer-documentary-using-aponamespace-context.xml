@@ -15,12 +15,12 @@
     <bean id="advice" class="com.learn.simpleconsoleapp.seedworks.advices.ConsoleLoggingAdvice"
           p:expectedStringValue="blah"/>
 
-    <bean id="johnMayer" class="com.learn.simpleconsoleapp.beans.Singer" init-method="init"
+    <bean id="johnMayer" class="com.learn.simpleconsoleapp.beans.SimpleSinger" init-method="init"
           p:name="John Mayer"
           p:age="29"
           p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerOne.txt"/>
 
-    <bean id="ericClapton" class="com.learn.simpleconsoleapp.beans.Singer" init-method="init"
+    <bean id="ericClapton" class="com.learn.simpleconsoleapp.beans.SimpleSinger" init-method="init"
           p:name="Eric Clapton"
           p:age="42"
           p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerTwo.txt"/>

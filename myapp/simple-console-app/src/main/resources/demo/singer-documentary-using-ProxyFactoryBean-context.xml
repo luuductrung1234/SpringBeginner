@@ -24,7 +24,7 @@
     prepare Target
     ====================================== -->
 
-    <bean id="johnMayer" class="com.learn.simpleconsoleapp.beans.Singer" init-method="init"
+    <bean id="johnMayer" class="com.learn.simpleconsoleapp.beans.SimpleSinger" init-method="init"
           p:name="John Mayer"
           p:age="29"
           p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerOne.txt"/>

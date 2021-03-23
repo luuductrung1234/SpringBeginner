@@ -1,6 +1,6 @@
 package com.learn.simpleconsoleapp.configs.demo;
 
-import com.learn.simpleconsoleapp.beans.Singer;
+import com.learn.simpleconsoleapp.beans.SimpleSinger;
 import com.learn.simpleconsoleapp.seedworks.advices.ConsoleLoggingAdvice;
 import com.learn.simpleconsoleapp.seedworks.advisor.IsModifiedAdvisor;
 import org.springframework.aop.framework.ProxyFactoryBean;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = {"com.learn.simpleconsoleapp.seedworks"})
+@ComponentScan(basePackages = {"com.learn.simpleconsoleapp"})
 public class SingerDocumentaryUsingProxyFactoryBeanConfig {
 
     @Value("#{systemProperties['java.io.tmpdir']}")
@@ -27,8 +27,8 @@ public class SingerDocumentaryUsingProxyFactoryBeanConfig {
     }
 
     @Bean(initMethod = "init", destroyMethod = "destroy")
-    public Singer johnMayer(){
-        var singer = new Singer();
+    public SimpleSinger johnMayer() {
+        var singer = new SimpleSinger();
         singer.setName("John Mayer");
         singer.setAge(29);
         singer.setLyricFilePath(tempDir + "singerOne.txt");

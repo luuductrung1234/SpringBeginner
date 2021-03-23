@@ -1,5 +1,6 @@
 package com.learn.simpleconsoleapp.beans;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,10 +13,7 @@ import org.springframework.stereotype.Component;
 public class Documentarist {
     private Singer singer;
 
-    public Documentarist() {
-    }
-
-    public Documentarist(Singer singer) {
+    public Documentarist(@Qualifier("betterSinger") Singer singer) {
         this.singer = singer;
     }
 
