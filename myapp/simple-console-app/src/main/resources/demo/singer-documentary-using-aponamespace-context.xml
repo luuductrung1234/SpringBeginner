@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:config>
+        <aop:pointcut id="singExecution" expression="execution(* sing*(String)) and args(value) and bean(eric*)"/>
+        <aop:aspect ref="advice">
+            <aop:before pointcut-ref="singExecution" method="beforeLoggingWithValue"/>
+            <aop:around pointcut-ref="singExecution" method="aroundLoggingWithValue"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="advice" class="com.learn.simpleconsoleapp.seedworks.advices.ConsoleLoggingAdvice"
+          p:expectedStringValue="blah"/>
+
+    <bean id="johnMayer" class="com.learn.simpleconsoleapp.beans.SimpleSinger" init-method="init"
+          p:name="John Mayer"
+          p:age="29"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerOne.txt"/>
+
+    <bean id="ericClapton" class="com.learn.simpleconsoleapp.beans.SimpleSinger" init-method="init"
+          p:name="Eric Clapton"
+          p:age="42"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerTwo.txt"/>
+
+    <bean id="documentaristOne" class="com.learn.simpleconsoleapp.beans.Documentarist">
+        <constructor-arg name="singer" ref="johnMayer"/>
+    </bean>
+
+    <bean id="documentaristTwo" class="com.learn.simpleconsoleapp.beans.Documentarist">
+        <constructor-arg name="singer" ref="ericClapton"/>
+    </bean>
+</beans>

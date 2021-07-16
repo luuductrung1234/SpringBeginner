@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- =====================================
+    prepare Advice & Advisor
+    ====================================== -->
+
+    <bean id="auditAdvice" class="com.learn.simpleconsoleapp.seedworks.advices.ConsoleLoggingAdvice"/>
+
+    <bean id="auditAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"
+          p:advice-ref="auditAdvice">
+        <property name="pointcut">
+            <bean class="org.springframework.aop.aspectj.AspectJExpressionPointcut"
+                  p:expression="execution(* sing*(..))"/>
+        </property>
+    </bean>
+
+    <bean id="mixinAdvisor" class="com.learn.simpleconsoleapp.seedworks.advisor.IsModifiedAdvisor"/>
+
+    <!-- =====================================
+    prepare Target
+    ====================================== -->
+
+    <bean id="johnMayer" class="com.learn.simpleconsoleapp.beans.SimpleSinger" init-method="init"
+          p:name="John Mayer"
+          p:age="29"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerOne.txt"/>
+
+    <!-- =====================================
+    setup Proxy
+    ====================================== -->
+
+    <!-- First Proxied Singer (using advise directly) -->
+    <bean id="singerProxyOne" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:target-ref="johnMayer">
+        <property name="interceptorNames">
+            <list>
+                <value>auditAdvice</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Second Proxied Singer (using advisor) -->
+    <bean id="singerProxyTwo" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:target-ref="johnMayer">
+        <property name="interceptorNames">
+            <list>
+                <value>auditAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="singerProxyThree" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:target-ref="johnMayer"
+          p:proxyTargetClass="true">
+        <property name="interceptorNames">
+            <list>
+                <value>mixinAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="documentaristOne" class="com.learn.simpleconsoleapp.beans.Documentarist">
+        <constructor-arg name="singer" ref="singerProxyOne"/>
+    </bean>
+
+    <bean id="documentaristTwo" class="com.learn.simpleconsoleapp.beans.Documentarist">
+        <constructor-arg name="singer" ref="singerProxyTwo"/>
+    </bean>
+</beans>

@@ -66,9 +66,15 @@ public class BankPaymentHandler implements PaymentHandler, BeanNameAware {
         Double earnedPoint = (paymentRequest.getAmount() / 100_000) * 0.05;
         account.earnBankPoint(earnedPoint);
 
+        accountRepository.save();
+
         return paymentHistory;
     }
 
+    /**
+     * @Implement {@link BeanNameAware#setBeanName(String)}
+     * @param name
+     */
     @Override
     public void setBeanName(String name) {
         paymentMethod = name;

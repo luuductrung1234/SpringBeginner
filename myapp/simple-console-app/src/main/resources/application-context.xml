@@ -2,12 +2,125 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
-    <context:component-scan base-package="com.learn"/>
-    <context:property-placeholder location="classpath:application.properties"/>
-    <!--    <context:component-scan base-package="com.learn.dummybeans.services"/>-->
-    <!--    <context:component-scan base-package="com.learn.dummybeans.repositories"/>-->
+    <context:component-scan base-package="com.learn.dummybeans,com.learn.moneytransfer,com.learn.simpleconsoleapp">
+        <context:exclude-filter type="regex" expression="com.learn.simpleconsoleapp.configs.demo.*"/>
+    </context:component-scan>
 
+    <context:property-placeholder location="classpath:application.properties,classpath:msf.properties"/>
+
+    <!-- =====================================
+    Collection Injection
+    ====================================== -->
+
+    <util:map id="map" map-class="java.util.HashMap">
+        <entry key="someValue">
+            <value>It's a Friday, we finally made it</value>
+        </entry>
+        <entry key="someBean">
+            <ref bean="lyricHolder"/>
+        </entry>
+    </util:map>
+
+    <util:properties id="props">
+        <prop key="firstName">John</prop>
+        <prop key="secondName">Mayer</prop>
+    </util:properties>
+
+    <util:set id="set" set-class="java.util.HashSet">
+        <value>I can't believe I get to see your face</value>
+        <ref bean="lyricHolder"/>
+    </util:set>
+
+    <util:list id="list" list-class="java.util.ArrayList">
+        <value>You've been working and I've been waiting</value>
+        <ref bean="lyricHolder"/>
+    </util:list>
+
+    <!-- =====================================
+    Understand Naming Bean
+    ====================================== -->
+
+    <bean id="string1" class="java.lang.String"/>
+    <bean name="string2" class="java.lang.String"/>
+    <bean class="java.lang.String"/>
+    <bean class="java.lang.String"/>
+    <bean name="jon johnny,jonathan;jim" class="java.lang.String"/>
+    <bean id="jon johnny,jonathan;jim" class="java.lang.String"/>
+
+    <!-- =====================================
+    Bean Life-Cycle
+    ====================================== -->
+
+    <bean id="singerOne"
+          class="com.learn.simpleconsoleapp.beans.Singer"
+          lazy-init="true"
+          init-method="init"
+          destroy-method="destroy"
+          p:name="John Mayer" p:age="39"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerOne.txt"
+          p:createdBy="XML Configuration"/>
+    <bean id="singerTwo"
+          class="com.learn.simpleconsoleapp.beans.Singer"
+          lazy-init="true"
+          init-method="init"
+          destroy-method="destroy"
+          p:age="72"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerTwo.txt"
+          p:createdBy="XML Configuration"/>
+    <bean id="singerThree"
+          class="com.learn.simpleconsoleapp.beans.Singer"
+          lazy-init="true"
+          init-method="init"
+          destroy-method="destroy"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerThree.txt"
+          p:name="John Butler" p:createdBy="XML Configuration"/>
+
+    <bean id="singerWithInterfaceTwo"
+          class="com.learn.simpleconsoleapp.beans.SingerWithInterface"
+          lazy-init="true"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerWithInterfaceTwo.txt"
+          p:name="Lucas Maura" p:age="52" p:createdBy="XML Configuration"/>
+
+    <bean id="singerWithJSR250Two"
+          class="com.learn.simpleconsoleapp.beans.SingerWithJSR250"
+          lazy-init="true"
+          p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerWithJSR250Two.txt"
+          p:name="Luiz Castaneda" p:age="22" p:createdBy="XML Configuration"/>
+
+    <!-- =====================================
+    PropertyEditor
+    ====================================== -->
+
+    <bean id="builtInSample"
+          class="com.learn.simpleconsoleapp.beans.SamplePropertyEditorBean"
+          lazy-init="true"
+          p:character="A"
+          p:bytes="John Mayer"
+          p:cls="java.lang.String"
+          p:trueOrFalse="true"
+          p:stream="assets/dummy.txt"
+          p:floatValue="123.45678"
+          p:date="05/03/13"
+          p:file="#{systemProperties['java.io.tmpdir']}singerOne.txt"
+          p:locale="en_US"
+          p:pattern="a*b"
+          p:properties="name=Chris age=32"
+          p:trimString=" String need trimming "
+          p:url="https://spring.io/">
+        <property name="stringList">
+            <list>
+                <value>String member 1</value>
+                <value>String member 2</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="exampleBean"
+          class="com.learn.simpleconsoleapp.beans.Customer"
+          p:fullName="John Mayer"/>
 </beans>

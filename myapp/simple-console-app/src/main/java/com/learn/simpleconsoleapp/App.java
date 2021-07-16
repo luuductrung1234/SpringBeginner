@@ -1,13 +1,13 @@
 package com.learn.simpleconsoleapp;
 
+import com.learn.dummybeans.services.*;
 import com.learn.moneytransfer.commands.CommandManager;
-import com.learn.simpleconsoleapp.configs.AppConfig;
 import com.learn.moneytransfer.models.Account;
 import com.learn.moneytransfer.models.PaymentHistory;
 import com.learn.moneytransfer.models.PaymentMethod;
 import com.learn.moneytransfer.repositories.AccountRepository;
 import com.learn.moneytransfer.views.PaymentRequest;
-import com.learn.dummybeans.services.*;
+import com.learn.simpleconsoleapp.configs.AppConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -20,15 +20,16 @@ public class App {
     public static void main(String[] args) {
         System.setProperty("spring.profiles.active", "local");
 
-//        RunFirstContext();
-//        RunSecondContext();
-        RunThirdContext();
+//        FileSystemXmlContextDemo();
+//        ClassPathXmlContextDemo();
+//        AnnotationContextDemo();
+//        MoneyTransferDemo();
     }
 
     /**
      * Generate ApplicationContext from xml (in file system)
      */
-    public static void RunFirstContext() {
+    public static void FileSystemXmlContextDemo() {
         ApplicationContext firstContext = new FileSystemXmlApplicationContext("application-context.xml");
 
         MyService myService1 = firstContext.getBean(MyService.class);
@@ -45,7 +46,7 @@ public class App {
     /**
      * Generate ApplicationContext from xml (in classpath)
      */
-    public static void RunSecondContext() {
+    public static void ClassPathXmlContextDemo() {
         ApplicationContext secondContext = new ClassPathXmlApplicationContext("application-context.xml");
 
         Service myService = secondContext.getBean(MyService.class);
@@ -64,7 +65,7 @@ public class App {
     /**
      * Generate ApplicationContext by annotation
      */
-    public static void RunThirdContext() {
+    public static void AnnotationContextDemo() {
         ApplicationContext thirdContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         Service service = thirdContext.getBean(HisService.class);
@@ -75,6 +76,14 @@ public class App {
 
         Service theirService = thirdContext.getBean(TheirService.class);
         theirService.doSomething();
+    }
+
+    /**
+     * Apply IoC Container knowledge to build simple CQRS Money Transfer Demo
+     * (Spring Framework docs - IoC Container section)
+     */
+    public static void MoneyTransferDemo() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         System.out.println();
         System.out.println("-----------------------------------");
@@ -82,8 +91,8 @@ public class App {
         System.out.println("-----------------------------------");
         System.out.println();
 
-        CommandManager commandManager = thirdContext.getBean(CommandManager.class);
-        AccountRepository accountRepository = thirdContext.getBean(AccountRepository.class);
+        CommandManager commandManager = context.getBean(CommandManager.class);
+        AccountRepository accountRepository = context.getBean(AccountRepository.class);
 
         Account account = accountRepository.getById(1).get();
         System.out.println("Account before payment: \n" + account + "\n");

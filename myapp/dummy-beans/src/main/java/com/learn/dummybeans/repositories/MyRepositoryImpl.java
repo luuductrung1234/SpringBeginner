@@ -13,6 +13,10 @@ public class MyRepositoryImpl implements MyRepository, EnvironmentAware {
         System.out.println("Doing some query.");
     }
 
+    /**
+     * @Implement {@link EnvironmentAware#setEnvironment(Environment)}
+     * @param environment
+     */
     @Override
     public void setEnvironment(Environment environment) {
 

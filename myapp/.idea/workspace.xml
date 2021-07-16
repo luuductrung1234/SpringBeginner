@@ -5,43 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/application-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/commands/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/commands/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/commands/PaymentCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/commands/PaymentCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/configs/SpringContainerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/SpringContainerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/helpers/OfficeHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/helpers/OfficeHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/models/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/models/AccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/models/AccountType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/models/PaymentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/models/PaymentHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/models/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/models/PaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/repositories/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/repositories/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/repositories/AccountRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/repositories/AnotherRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/repositories/AnotherRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/repositories/MyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/repositories/MyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/repositories/MyRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/repositories/MyRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/seedworks/InspectRegisteredScopesPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/seedworks/InspectRegisteredScopesPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/BankPaymentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/services/BankPaymentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/EWalletPaymentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/services/EWalletPaymentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/HerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/HerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/HisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/HisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/MyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/MyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/PaymentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/services/PaymentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/PaymentHandlerResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/services/PaymentHandlerResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/TheirService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/TheirService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/services/YourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/YourService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/views/PaymentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/views/PaymentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/learn/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/test/java/com/learn/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/BetterSinger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/BetterSinger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/GreatSinger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/GreatSinger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-ProxyFactoryBean-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-ProxyFactoryBean-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-aponamespace-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-aponamespace-context.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +46,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="spring-beans.schema" />
         <option value="Class" />
       </list>
     </option>
@@ -91,6 +68,7 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
@@ -109,15 +87,21 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.learn.moneytransfer.publishers" />
+      <recent name="com.learn.simpleconsoleapp.services" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/simple-console-app/src/main/resources/assets" />
+      <recent name="$PROJECT_DIR$/simple-console-app/src/main/resources/demo" />
       <recent name="$PROJECT_DIR$/simple-console-app" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -125,20 +109,21 @@
       <recent name="com.learn.repositories" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.learn.simpleconsoleapp" />
-      <recent name="com.learn.dummybeans" />
-      <recent name="com.learn.moneytransfer" />
-      <recent name="com.learn.moneytransfer.services" />
-      <recent name="com.learn.repositories" />
+      <recent name="com.learn.simpleconsoleapp.configs.demo" />
+      <recent name="com.learn.simpleconsoleapp.seedworks.advices" />
+      <recent name="com.learn.simpleconsoleapp.seedworks.advisor" />
+      <recent name="com.learn.simpleconsoleapp.seedworks.advisors" />
+      <recent name="com.learn.simpleconsoleapp.models" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.SpringAopApp.java - [simple-console-app]">
+    <configuration name="App.java - [simple-console-app]" type="Application" factoryName="Application" temporary="true">
       <envs>
         <env name="my.name" value="McEnany" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.App" />
       <module name="simple-console-app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/simple-console-app" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.learn.dummybeans.repositories.*" />
@@ -149,13 +134,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="DeclareSpringComponentsApp.java - [simple-console-app]" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.DeclareSpringComponentsApp" />
+      <module name="simple-console-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HierarchicalAppContextApp.java - [simple-console-app]" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.HierarchicalAppContextApp" />
+      <module name="simple-console-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringAopApp.java - [simple-console-app]" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.SpringAopApp" />
+      <module name="simple-console-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConfigWithBeanFactoryApp.java - [simple-console-app]" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.XmlConfigWithBeanFactorApp" />
+      <module name="simple-console-app" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,22 +182,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MoneyTransferApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="money-transfer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learning.moneytransfer.MoneyTransferApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.App" />
+      <item itemvalue="Application.DeclareSpringComponentsApp.java - [simple-console-app]" />
+      <item itemvalue="Application.HierarchicalAppContextApp.java - [simple-console-app]" />
+      <item itemvalue="Application.SpringAopApp.java - [simple-console-app]" />
+      <item itemvalue="Application.XmlConfigWithBeanFactoryApp.java - [simple-console-app]" />
+      <item itemvalue="Application.App.java - [simple-console-app]" />
       <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
-      <item itemvalue="Spring Boot.MoneyTransferApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+        <item itemvalue="Application.App.java - [simple-console-app]" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +226,25 @@
       <workItem from="1609234893921" duration="1865000" />
       <workItem from="1612687104210" duration="2662000" />
       <workItem from="1612932398402" duration="13549000" />
-      <workItem from="1613113815601" duration="9998000" />
+      <workItem from="1613113815601" duration="49201000" />
+      <workItem from="1613568446646" duration="90000" />
+      <workItem from="1613568559181" duration="19377000" />
+      <workItem from="1613875583556" duration="2958000" />
+      <workItem from="1614002434920" duration="2036000" />
+      <workItem from="1614177540453" duration="3099000" />
+      <workItem from="1614262120552" duration="13704000" />
+      <workItem from="1614507747786" duration="2385000" />
+      <workItem from="1614597461498" duration="746000" />
+      <workItem from="1614697924859" duration="2088000" />
+      <workItem from="1614772112246" duration="5090000" />
+      <workItem from="1614945793617" duration="18864000" />
+      <workItem from="1615086371191" duration="4821000" />
+      <workItem from="1615299230432" duration="2079000" />
+      <workItem from="1615603618572" duration="25514000" />
+      <workItem from="1615821026288" duration="2553000" />
+      <workItem from="1616292988981" duration="11530000" />
+      <workItem from="1616325210208" duration="9338000" />
+      <workItem from="1616507095665" duration="1162000" />
     </task>
     <servers />
   </component>
@@ -235,16 +255,45 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/App.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/services/MessageSupportFactory.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/money-transfer/src/main/java/com/learn/moneytransfer/eventhandlers/AccountEarnBankPointEventHandler.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java</url>
+          <line>416</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="((FileSystemXmlApplicationContext) firstContext).getBeanFactory().getBeanDefinition(&quot;myService&quot;)" language="JAVA" />
+        <watch expression="johnMayer()" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
