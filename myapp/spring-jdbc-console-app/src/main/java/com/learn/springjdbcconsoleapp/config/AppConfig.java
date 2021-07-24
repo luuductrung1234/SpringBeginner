@@ -1,5 +1,6 @@
 package com.learn.springjdbcconsoleapp.config;
 
+import com.learn.springjdbcconsoleapp.seedwords.MySQLErrorCodesTranslator;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +10,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.sql.DataSource;
 
@@ -45,5 +48,28 @@ public class AppConfig {
             logger.error("DBCP DataSource bean cannot be created!", e);
             return null;
         }
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate() {
+        var jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate.setDataSource(dataSource());
+
+        var errorTranslator = new MySQLErrorCodesTranslator();
+        errorTranslator.setDataSource(dataSource());
+        jdbcTemplate.setExceptionTranslator(errorTranslator);
+
+        return jdbcTemplate;
+    }
+
+    @Bean
+    public NamedParameterJdbcTemplate namedParameterJdbcTemplate() {
+        var namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource());
+
+        var errorTranslator = new MySQLErrorCodesTranslator();
+        errorTranslator.setDataSource(dataSource());
+        namedParameterJdbcTemplate.getJdbcTemplate().setExceptionTranslator(errorTranslator);
+
+        return namedParameterJdbcTemplate;
     }
 }

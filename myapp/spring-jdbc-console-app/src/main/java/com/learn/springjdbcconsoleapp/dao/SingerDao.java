@@ -9,6 +9,10 @@ public interface SingerDao {
 
     List<Singer> findByFirstName(String firstName);
 
+    Singer findById(Long id);
+
+    String findNameById(Long id);
+
     String findLastNameById(Long id);
 
     String findFirstNameById(Long id);

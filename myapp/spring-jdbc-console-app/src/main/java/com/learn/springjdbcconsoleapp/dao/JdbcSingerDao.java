@@ -2,15 +2,18 @@ package com.learn.springjdbcconsoleapp.dao;
 
 import com.learn.springjdbcconsoleapp.entities.Album;
 import com.learn.springjdbcconsoleapp.entities.Singer;
+import com.learn.springjdbcconsoleapp.seedwords.SingerMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,25 +24,32 @@ public class JdbcSingerDao implements SingerDao {
     private static Logger logger = LoggerFactory.getLogger(JdbcSingerDao.class);
 
     private final DataSource dataSource;
-    private SelectAllSingers selectAllSingers;
-    private SelectSingerByFirstName selectSingerByFirstName;
-    private UpdateSinger updateSinger;
-    private InsertSinger insertSinger;
-    private InsertSingerAlbum insertSingerAlbum;
-    private DeleteSinger deleteSinger;
-    private StoredFunctionFirstNameById storedFunctionFirstNameById;
+    private final JdbcTemplate jdbcTemplate;
+    private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+
+    private final SelectAllSingers selectAllSingers;
+    private final SelectSingerByFirstName selectSingerByFirstName;
+    private final UpdateSinger updateSinger;
+    private final InsertSinger insertSinger;
+    private final InsertSingerAlbum insertSingerAlbum;
+    private final DeleteSinger deleteSinger;
+    private final StoredFunctionFirstNameById storedFunctionFirstNameById;
     private final StoredFunctionLastNameById storedFunctionLastNameById;
 
     @Autowired
-    public JdbcSingerDao(DataSource dataSource) {
+    public JdbcSingerDao(DataSource dataSource, JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.dataSource = dataSource;
+        this.jdbcTemplate = jdbcTemplate;
+
         this.selectAllSingers = new SelectAllSingers(dataSource);
         this.selectSingerByFirstName = new SelectSingerByFirstName(dataSource);
         this.updateSinger = new UpdateSinger(dataSource);
         this.insertSinger = new InsertSinger(dataSource);
+        this.insertSingerAlbum = new InsertSingerAlbum(dataSource);
         this.storedFunctionFirstNameById = new StoredFunctionFirstNameById(dataSource);
         this.storedFunctionLastNameById = new StoredFunctionLastNameById(dataSource);
         this.deleteSinger = new DeleteSinger(dataSource);
+        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
     @Override
@@ -52,6 +62,20 @@ public class JdbcSingerDao implements SingerDao {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("first_name", firstName);
         return selectSingerByFirstName.executeByNamedParam(paramMap);
+    }
+
+    @Override
+    public Singer findById(Long id) {
+        String sql = "SELECT ID, FIRST_NAME, LAST_NAME, BIRTH_DATE FROM SINGER WHERE ID= :singerId";
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("singerId", id);
+        return namedParameterJdbcTemplate.queryForObject(sql, paramMap, new SingerMapper());
+    }
+
+    @Override
+    public String findNameById(Long id) {
+        String sql = "SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) FROM SINGER WHERE ID= ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{id}, new int[]{Types.INTEGER}, String.class);
     }
 
     @Override
@@ -80,7 +104,6 @@ public class JdbcSingerDao implements SingerDao {
 
     @Override
     public void insertWithAlbum(Singer singer) {
-        insertSingerAlbum = new InsertSingerAlbum(dataSource);
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("first_name", singer.getFirstName());
         paramMap.put("last_name", singer.getLastName());
