@@ -6,16 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-jdbc-console-app" />
         <module name="money-transfer" />
         <module name="dummy-beans" />
+        <module name="jdbc-console-app" />
         <module name="simple-console-app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dummy-beans" target="11" />
+      <module name="jdbc-console-app" target="11" />
       <module name="money-transfer" target="11" />
       <module name="myapp" target="1.5" />
       <module name="simple-console-app" target="11" />
+      <module name="spring-jdbc-console-app" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

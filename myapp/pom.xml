@@ -13,6 +13,8 @@
         <module>money-transfer</module>
         <module>simple-console-app</module>
         <module>dummy-beans</module>
+        <module>jdbc-console-app</module>
+        <module>spring-jdbc-console-app</module>
     </modules>
 
     <name>myapp</name>

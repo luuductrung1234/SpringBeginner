@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/YourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dummy-beans/src/main/java/com/learn/dummybeans/services/YourService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/SpringAopApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/BetterSinger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/BetterSinger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Documentarist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/GreatSinger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/GreatSinger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/beans/Singer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingProxyFactoryBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingAspectjConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/java/com/learn/simpleconsoleapp/configs/demo/SingerDocumentaryUsingAspectjConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-ProxyFactoryBean-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-ProxyFactoryBean-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-aponamespace-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-console-app/src/main/resources/demo/singer-documentary-using-aponamespace-context.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="spring-beans.schema" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -73,12 +70,13 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-jdbc-console-app/src/main/java/com/learn/springjdbcconsoleapp/entities" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -89,7 +87,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Less" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -97,9 +95,14 @@
       <recent name="com.learn.simpleconsoleapp.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-jdbc-console-app/src/main/java/com/learn/springjdbcconsoleapp/entities" />
+      <recent name="$PROJECT_DIR$/spring-jdbc-console-app/src/main/java/com/learn/springjdbcconsoleapp/dao" />
+      <recent name="$PROJECT_DIR$/spring-jdbc-console-app/src/main/resources" />
+      <recent name="$PROJECT_DIR$/spring-jdbc-console-app/src/main/resources/db" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-jdbc-console-app/src/test/resources" />
       <recent name="$PROJECT_DIR$/simple-console-app/src/main/resources/assets" />
       <recent name="$PROJECT_DIR$/simple-console-app/src/main/resources/demo" />
       <recent name="$PROJECT_DIR$/simple-console-app" />
@@ -109,27 +112,31 @@
       <recent name="com.learn.repositories" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.learn.springjdbcconsoleapp.dao" />
+      <recent name="com.learn.springjdbcconsoleapp" />
       <recent name="com.learn.simpleconsoleapp.configs.demo" />
       <recent name="com.learn.simpleconsoleapp.seedworks.advices" />
       <recent name="com.learn.simpleconsoleapp.seedworks.advisor" />
-      <recent name="com.learn.simpleconsoleapp.seedworks.advisors" />
-      <recent name="com.learn.simpleconsoleapp.models" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.learn.springjdbcconsoleapp.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SpringAopApp.java - [simple-console-app]">
-    <configuration name="App.java - [simple-console-app]" type="Application" factoryName="Application" temporary="true">
-      <envs>
-        <env name="my.name" value="McEnany" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.App" />
-      <module name="simple-console-app" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/simple-console-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.learn.dummybeans.repositories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="Application.App.java - [jdbc-console-app]">
+    <configuration name="App.java - [jdbc-console-app]" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.jdbcconsoleapp.App" />
+      <module name="jdbc-console-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App.java - [spring-jdbc-console-app]" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.App" />
+      <module name="spring-jdbc-console-app" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,18 +173,93 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myapp" />
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationJdbcTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jdbc-console-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.learn.dummybeans.repositories.*" />
+          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.learn" />
-      <option name="MAIN_CLASS_NAME" value="com.learn.AppTest" />
-      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
+      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.AnnotationJdbcTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationJdbcTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jdbc-console-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.AnnotationJdbcTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationJdbcTest.testFindByFirstName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jdbc-console-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.AnnotationJdbcTest" />
+      <option name="METHOD_NAME" value="testFindByFirstName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationJdbcTest.testSingerInsertWithAlbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jdbc-console-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.AnnotationJdbcTest" />
+      <option name="METHOD_NAME" value="testSingerInsertWithAlbum" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DbConfigTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jdbc-console-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
+      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.DbConfigTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -187,13 +269,21 @@
       <item itemvalue="Application.HierarchicalAppContextApp.java - [simple-console-app]" />
       <item itemvalue="Application.SpringAopApp.java - [simple-console-app]" />
       <item itemvalue="Application.XmlConfigWithBeanFactoryApp.java - [simple-console-app]" />
-      <item itemvalue="Application.App.java - [simple-console-app]" />
-      <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+      <item itemvalue="Application.App.java - [jdbc-console-app]" />
+      <item itemvalue="Application.App.java - [spring-jdbc-console-app]" />
+      <item itemvalue="JUnit.DbConfigTest" />
+      <item itemvalue="JUnit.AnnotationJdbcTest" />
+      <item itemvalue="JUnit.AnnotationJdbcTest.testFindAll" />
+      <item itemvalue="JUnit.AnnotationJdbcTest.testFindByFirstName" />
+      <item itemvalue="JUnit.AnnotationJdbcTest.testSingerInsertWithAlbum" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
-        <item itemvalue="Application.App.java - [simple-console-app]" />
+        <item itemvalue="JUnit.AnnotationJdbcTest" />
+        <item itemvalue="JUnit.AnnotationJdbcTest.testFindAll" />
+        <item itemvalue="JUnit.AnnotationJdbcTest.testSingerInsertWithAlbum" />
+        <item itemvalue="JUnit.AnnotationJdbcTest.testFindByFirstName" />
+        <item itemvalue="JUnit.DbConfigTest" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +334,15 @@
       <workItem from="1615821026288" duration="2553000" />
       <workItem from="1616292988981" duration="11530000" />
       <workItem from="1616325210208" duration="9338000" />
-      <workItem from="1616507095665" duration="1162000" />
+      <workItem from="1616507095665" duration="2589000" />
+      <workItem from="1616748294894" duration="4426000" />
+      <workItem from="1616761713626" duration="3939000" />
+      <workItem from="1616771954122" duration="3478000" />
+      <workItem from="1622380122026" duration="2365000" />
+      <workItem from="1626401675384" duration="6212000" />
+      <workItem from="1626527930471" duration="1223000" />
+      <workItem from="1626615320703" duration="12164000" />
+      <workItem from="1627102495161" duration="10094000" />
     </task>
     <servers />
   </component>
@@ -284,9 +382,47 @@
           <line>41</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jdbc-console-app/src/main/java/com/learn/jdbcconsoleapp/dao/BaseDao.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/DbConfigTest.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/main/java/com/learn/springjdbcconsoleapp/dao/JdbcSingerDao.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/main/java/com/learn/springjdbcconsoleapp/dao/JdbcSingerDao.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/main/java/com/learn/springjdbcconsoleapp/dao/JdbcSingerDao.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="dataSource.getClass()" language="JAVA" />
+      </configuration>
       <configuration name="Application">
         <watch expression="johnMayer()" language="JAVA" />
       </configuration>
