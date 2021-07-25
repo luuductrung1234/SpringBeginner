@@ -57,7 +57,7 @@
     ====================================== -->
 
     <bean id="singerOne"
-          class="com.learn.simpleconsoleapp.beans.Singer"
+          class="com.learn.simpleconsoleapp.beans.SimpleSinger"
           lazy-init="true"
           init-method="init"
           destroy-method="destroy"
@@ -65,7 +65,7 @@
           p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerOne.txt"
           p:createdBy="XML Configuration"/>
     <bean id="singerTwo"
-          class="com.learn.simpleconsoleapp.beans.Singer"
+          class="com.learn.simpleconsoleapp.beans.SimpleSinger"
           lazy-init="true"
           init-method="init"
           destroy-method="destroy"
@@ -73,7 +73,7 @@
           p:lyricFilePath="#{systemProperties['java.io.tmpdir']}singerTwo.txt"
           p:createdBy="XML Configuration"/>
     <bean id="singerThree"
-          class="com.learn.simpleconsoleapp.beans.Singer"
+          class="com.learn.simpleconsoleapp.beans.SimpleSinger"
           lazy-init="true"
           init-method="init"
           destroy-method="destroy"
