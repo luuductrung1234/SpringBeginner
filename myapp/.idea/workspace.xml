@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-guru/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Publisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/DbConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/DbConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/JdbcTemplateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/JdbcTemplateTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +68,10 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -120,7 +124,7 @@
       <recent name="com.learn.springjdbcconsoleapp.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WebApp.java - [spring-guru]">
+  <component name="RunManager" selected="JUnit.All in spring-jdbc-console-app">
     <configuration name="App.java - [jdbc-console-app]" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -193,6 +197,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in spring-jdbc-console-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jdbc-console-app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnnotationJdbcTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-jdbc-console-app" />
       <extension name="coverage">
@@ -204,38 +216,6 @@
       <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
       <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.AnnotationJdbcTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnnotationJdbcTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-jdbc-console-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
-      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.AnnotationJdbcTest" />
-      <option name="METHOD_NAME" value="testFindAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnnotationJdbcTest.testSingerInsertWithAlbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-jdbc-console-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
-      <option name="MAIN_CLASS_NAME" value="com.learn.springjdbcconsoleapp.AnnotationJdbcTest" />
-      <option name="METHOD_NAME" value="testSingerInsertWithAlbum" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -271,6 +251,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.learn.springjdbcconsoleapp in spring-jdbc-console-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-jdbc-console-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.springjdbcconsoleapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.learn.springjdbcconsoleapp" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-guru" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.springguru.webapp.WebApp" />
@@ -287,19 +281,19 @@
       <item itemvalue="Application.App.java - [spring-jdbc-console-app]" />
       <item itemvalue="Application.WebApp.java - [spring-guru]" />
       <item itemvalue="JUnit.AnnotationJdbcTest" />
-      <item itemvalue="JUnit.AnnotationJdbcTest.testFindAll" />
-      <item itemvalue="JUnit.AnnotationJdbcTest.testSingerInsertWithAlbum" />
       <item itemvalue="JUnit.JdbcTemplateTest" />
       <item itemvalue="JUnit.JdbcTemplateTest.testFindNameById" />
       <item itemvalue="Spring Boot.WebApp" />
+      <item itemvalue="JUnit.All in spring-jdbc-console-app" />
+      <item itemvalue="JUnit.com.learn.springjdbcconsoleapp in spring-jdbc-console-app" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in spring-jdbc-console-app" />
+        <item itemvalue="JUnit.com.learn.springjdbcconsoleapp in spring-jdbc-console-app" />
         <item itemvalue="JUnit.AnnotationJdbcTest" />
         <item itemvalue="JUnit.JdbcTemplateTest" />
         <item itemvalue="JUnit.JdbcTemplateTest.testFindNameById" />
-        <item itemvalue="JUnit.AnnotationJdbcTest.testFindAll" />
-        <item itemvalue="JUnit.AnnotationJdbcTest.testSingerInsertWithAlbum" />
       </list>
     </recent_temporary>
   </component>
@@ -410,7 +404,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java</url>
-          <line>44</line>
+          <line>41</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -430,12 +424,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java</url>
-          <line>36</line>
+          <line>33</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/JdbcTemplateTest.java</url>
-          <line>38</line>
+          <line>35</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

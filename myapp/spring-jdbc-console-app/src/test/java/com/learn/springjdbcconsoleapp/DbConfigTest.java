@@ -1,8 +1,8 @@
 package com.learn.springjdbcconsoleapp;
 
 import com.learn.springjdbcconsoleapp.config.DbConfig;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -22,11 +22,11 @@ public class DbConfigTest {
         ctx.refresh();
 
         var dataSource = ctx.getBean("dataSource", DataSource.class);
-        Assert.assertNotNull(dataSource);
+        Assertions.assertNotNull(dataSource);
         testDataSource(dataSource);
 
         var embeddedDataSource = ctx.getBean("embeddedDataSource", DataSource.class);
-        Assert.assertNotNull(embeddedDataSource);
+        Assertions.assertNotNull(embeddedDataSource);
         testDataSource(embeddedDataSource);
 
         ctx.close();
@@ -37,11 +37,11 @@ public class DbConfigTest {
         var ctx = new AnnotationConfigApplicationContext(DbConfig.class);
 
         var dataSource = ctx.getBean("dataSource", DataSource.class);
-        Assert.assertNotNull(dataSource);
+        Assertions.assertNotNull(dataSource);
         testDataSource(dataSource);
 
         var embeddedDataSource = ctx.getBean("embeddedDataSource", DataSource.class);
-        Assert.assertNotNull(embeddedDataSource);
+        Assertions.assertNotNull(embeddedDataSource);
         testDataSource(embeddedDataSource);
 
         ctx.close();
@@ -54,7 +54,7 @@ public class DbConfigTest {
             var resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int mockVal = resultSet.getInt("1");
-                Assert.assertTrue(mockVal == 1);
+                Assertions.assertTrue(mockVal == 1);
             }
         } catch (Exception e) {
             logger.debug(e.getMessage());
