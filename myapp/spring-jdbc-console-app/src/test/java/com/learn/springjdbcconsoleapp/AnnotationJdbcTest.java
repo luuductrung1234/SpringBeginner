@@ -4,10 +4,7 @@ import com.learn.springjdbcconsoleapp.config.AppConfig;
 import com.learn.springjdbcconsoleapp.dao.SingerDao;
 import com.learn.springjdbcconsoleapp.entities.Album;
 import com.learn.springjdbcconsoleapp.entities.Singer;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 
@@ -19,14 +16,14 @@ public class AnnotationJdbcTest {
     private GenericApplicationContext ctx;
     private SingerDao singerDao;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         singerDao = ctx.getBean(SingerDao.class);
-        Assert.assertNotNull(singerDao);
+        Assertions.assertNotNull(singerDao);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         ctx.close();
     }
@@ -34,7 +31,7 @@ public class AnnotationJdbcTest {
     @Test
     public void testFindAll() {
         List<Singer> singers = singerDao.findAll();
-        Assert.assertTrue(!singers.isEmpty());
+        Assertions.assertTrue(!singers.isEmpty());
         listSingers(singers);
         ctx.close();
     }
@@ -42,7 +39,7 @@ public class AnnotationJdbcTest {
     @Test
     public void testFindByFirstName() {
         List<Singer> singers = singerDao.findByFirstName("John");
-        Assert.assertTrue(!singers.isEmpty());
+        Assertions.assertTrue(!singers.isEmpty());
         listSingers(singers);
         ctx.close();
     }
@@ -103,7 +100,7 @@ public class AnnotationJdbcTest {
     @Test
     public void testFindFirstNameById(){
         String firstName = singerDao.findFirstNameById(2L);
-        Assert.assertEquals("Eric", firstName);
+        Assertions.assertEquals("Eric", firstName);
         System.out.println("Retrieved value: " + firstName);
     }
 
