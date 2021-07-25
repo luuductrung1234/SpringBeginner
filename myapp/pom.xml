@@ -15,6 +15,7 @@
         <module>dummy-beans</module>
         <module>jdbc-console-app</module>
         <module>spring-jdbc-console-app</module>
+        <module>spring-guru</module>
     </modules>
 
     <name>myapp</name>
@@ -31,7 +32,14 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
-                <version>5.3.1</version>
+                <version>5.3.9</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.5.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
