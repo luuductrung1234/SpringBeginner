@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Publisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/seedwords/BootStrapData.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/seedwords/BootStrapData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +355,7 @@
       <workItem from="1626401675384" duration="6212000" />
       <workItem from="1626527930471" duration="1223000" />
       <workItem from="1626615320703" duration="12164000" />
-      <workItem from="1627102495161" duration="20959000" />
+      <workItem from="1627102495161" duration="23761000" />
     </task>
     <servers />
   </component>
@@ -441,14 +434,6 @@
           <url>file://$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/JdbcTemplateTest.java</url>
           <line>38</line>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/seedwords/BootStrapData.java</url>
-          <line>29</line>
-          <properties class="com.learn.springguru.webapp.seedwords.BootStrapData" method="run">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

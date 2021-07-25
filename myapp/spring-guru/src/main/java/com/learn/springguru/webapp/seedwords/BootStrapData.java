@@ -42,16 +42,28 @@ public class BootStrapData implements CommandLineRunner {
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
 
+        ddd.setPublisher(sfg);
+        sfg.getBooks().add(ddd);
+
         authorRepository.save(eric);
         bookRepository.save(ddd);
+        publisherRepository.save(sfg);
 
         var rod = new Author("Rod", "Johnson");
         var noEjb = new Book("J2EE Development without EJB", "3983324845");
         rod.getBooks().add(noEjb);
         noEjb.getAuthors().add(rod);
 
+        noEjb.setPublisher(sfg);
+        sfg.getBooks().add(noEjb);
+
         authorRepository.save(rod);
         bookRepository.save(noEjb);
+        publisherRepository.save(sfg);
+
+        logger.info("generated " + bookRepository.count() + " " + Book.class.getSimpleName() + "(s)");
+        logger.info("generated " + authorRepository.count() + " " + Author.class.getSimpleName() + "(s)");
+        logger.info("generated " + publisherRepository.count() + " " + Publisher.class.getSimpleName() + "(s)");
 
         logger.info("finish " + BootStrapData.class.getSimpleName());
     }

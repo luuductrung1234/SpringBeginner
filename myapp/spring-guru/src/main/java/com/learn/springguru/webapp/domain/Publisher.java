@@ -1,6 +1,8 @@
 package com.learn.springguru.webapp.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -18,6 +20,10 @@ public class Publisher {
             @AttributeOverride(name = "zip", column = @Column(name = "address_zip"))
     })
     private Address address;
+
+    @OneToMany
+    @JoinColumn(name = "publisher_id")
+    private Set<Book> books = new HashSet<>();
 
     public Publisher() {
     }
@@ -51,12 +57,21 @@ public class Publisher {
         this.address = address;
     }
 
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
+
     @Override
     public String toString() {
         return "Publisher{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", address=" + address +
+                ", books=" + books +
                 '}';
     }
 
