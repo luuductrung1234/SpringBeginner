@@ -21,8 +21,7 @@ public class Publisher {
     })
     private Address address;
 
-    @OneToMany
-    @JoinColumn(name = "publisher_id")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "publisher")
     private Set<Book> books = new HashSet<>();
 
     public Publisher() {
@@ -71,7 +70,6 @@ public class Publisher {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address=" + address +
-                ", books=" + books +
                 '}';
     }
 

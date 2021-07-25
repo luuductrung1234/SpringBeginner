@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-guru/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/domain/Publisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/seedwords/BootStrapData.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/seedwords/BootStrapData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +38,9 @@
       <list>
         <option value="Enum" />
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -66,6 +67,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -79,10 +81,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Less" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -97,6 +99,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-guru/src/main/resources/templates/books" />
       <recent name="$PROJECT_DIR$/spring-jdbc-console-app/src/test/resources" />
       <recent name="$PROJECT_DIR$/simple-console-app/src/main/resources/assets" />
       <recent name="$PROJECT_DIR$/simple-console-app/src/main/resources/demo" />
@@ -355,7 +358,7 @@
       <workItem from="1626401675384" duration="6212000" />
       <workItem from="1626527930471" duration="1223000" />
       <workItem from="1626615320703" duration="12164000" />
-      <workItem from="1627102495161" duration="23761000" />
+      <workItem from="1627102495161" duration="29590000" />
     </task>
     <servers />
   </component>
@@ -435,6 +438,11 @@
           <line>38</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-guru/src/main/java/com/learn/springguru/webapp/controllers/BookController.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -442,7 +450,7 @@
         <watch expression="dataSource.getClass()" language="JAVA" />
       </configuration>
       <configuration name="Application">
-        <watch expression="johnMayer()" language="JAVA" />
+        <watch expression="((Book) ((ArrayList) books).get(0)).publisher" language="JAVA" custom="java.util.ArrayList,com.learn.springguru.webapp.domain.Book" />
       </configuration>
     </watches-manager>
   </component>
