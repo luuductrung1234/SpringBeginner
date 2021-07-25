@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dummy-beans" />
+        <module name="simple-console-app" />
+        <module name="sfg-pet-clinic" />
         <module name="spring-jdbc-console-app" />
         <module name="money-transfer" />
-        <module name="dummy-beans" />
         <module name="spring-guru" />
         <module name="jdbc-console-app" />
-        <module name="simple-console-app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="jdbc-console-app" target="11" />
       <module name="money-transfer" target="11" />
       <module name="myapp" target="1.5" />
+      <module name="sfg-pet-clinic" target="11" />
       <module name="simple-console-app" target="11" />
       <module name="spring-guru" target="11" />
       <module name="spring-jdbc-console-app" target="11" />

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/jdbc-console-app/jdbc-console-app.iml" filepath="$PROJECT_DIR$/jdbc-console-app/jdbc-console-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/money-transfer/money-transfer.iml" filepath="$PROJECT_DIR$/money-transfer/money-transfer.iml" />
       <module fileurl="file://$PROJECT_DIR$/myapp.iml" filepath="$PROJECT_DIR$/myapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sfg-pet-clinic/sfg-pet-clinic.iml" filepath="$PROJECT_DIR$/sfg-pet-clinic/sfg-pet-clinic.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple-console-app/simple-console-app.iml" filepath="$PROJECT_DIR$/simple-console-app/simple-console-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-guru/spring-guru.iml" filepath="$PROJECT_DIR$/spring-guru/spring-guru.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-jdbc-console-app/spring-jdbc-console-app.iml" filepath="$PROJECT_DIR$/spring-jdbc-console-app/spring-jdbc-console-app.iml" />

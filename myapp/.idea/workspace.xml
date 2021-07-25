@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b562d789-e2d8-4407-959a-2a26c45e3b7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/AnnotationJdbcTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/DbConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/DbConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/JdbcTemplateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-jdbc-console-app/src/test/java/com/learn/springjdbcconsoleapp/JdbcTemplateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +122,7 @@
       <recent name="com.learn.springjdbcconsoleapp.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in spring-jdbc-console-app">
+  <component name="RunManager" selected="Spring Boot.SfgPetClinicApplication">
     <configuration name="App.java - [jdbc-console-app]" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -164,15 +162,6 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.learn.simpleconsoleapp.SpringAopApp" />
       <module name="simple-console-app" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WebApp.java - [spring-guru]" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.learn.springguru.webapp.WebApp" />
-      <module name="spring-guru" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -265,9 +254,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="SfgPetClinicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sfg-pet-clinic" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.sfgpetclinic.SfgPetClinicApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApp - [spring-guru]" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-guru" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.springguru.webapp.WebApp" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -279,13 +278,11 @@
       <item itemvalue="Application.XmlConfigWithBeanFactoryApp.java - [simple-console-app]" />
       <item itemvalue="Application.App.java - [jdbc-console-app]" />
       <item itemvalue="Application.App.java - [spring-jdbc-console-app]" />
-      <item itemvalue="Application.WebApp.java - [spring-guru]" />
       <item itemvalue="JUnit.AnnotationJdbcTest" />
       <item itemvalue="JUnit.JdbcTemplateTest" />
       <item itemvalue="JUnit.JdbcTemplateTest.testFindNameById" />
-      <item itemvalue="Spring Boot.WebApp" />
-      <item itemvalue="JUnit.All in spring-jdbc-console-app" />
-      <item itemvalue="JUnit.com.learn.springjdbcconsoleapp in spring-jdbc-console-app" />
+      <item itemvalue="Spring Boot.WebApp - [spring-guru]" />
+      <item itemvalue="Spring Boot.SfgPetClinicApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -352,7 +349,7 @@
       <workItem from="1626401675384" duration="6212000" />
       <workItem from="1626527930471" duration="1223000" />
       <workItem from="1626615320703" duration="12164000" />
-      <workItem from="1627102495161" duration="29590000" />
+      <workItem from="1627102495161" duration="31610000" />
     </task>
     <servers />
   </component>
