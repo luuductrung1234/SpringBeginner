@@ -16,6 +16,7 @@
         <module>jdbc-console-app</module>
         <module>spring-jdbc-console-app</module>
         <module>spring-guru</module>
+        <module>sfg-pet-clinic</module>
     </modules>
 
     <name>myapp</name>
