@@ -15,7 +15,7 @@
 
     <groupId>com.learn</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <name>sfg-pet-clinic</name>
     <description>Demo project for Spring Boot</description>
@@ -49,7 +49,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/luuductrung1234/SpringBeginner.git</developerConnection>
-      <tag>sfg-pet-clinic-0.0.1</tag>
+        <developerConnection>scm:git:git@github.com:luuductrung1234/SpringBeginner.git</developerConnection>
+      <tag>HEAD</tag>
   </scm>
 </project>
