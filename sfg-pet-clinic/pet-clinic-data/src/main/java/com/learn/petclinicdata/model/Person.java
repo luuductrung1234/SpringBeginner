@@ -1,4 +1,4 @@
-package com.learn.petclinicdata;
+package com.learn.petclinicdata.model;
 
 public class Person {
     private String firstName;

@@ -1,4 +1,4 @@
-package com.learn.petclinicdata;
+package com.learn.petclinicdata.model;
 
 public class PetType {
     private String name;
