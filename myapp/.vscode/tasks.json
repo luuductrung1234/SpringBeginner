@@ -1,1 +1,114 @@
-{}
+{
+  "tasks": [
+    {
+      "label": "pwd",
+      "type": "shell",
+      "command": "pwd",
+      "problemMatcher": []
+    },
+    {
+      "label": "build-module",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "./.scripts/build.sh",
+        "do-build",
+        "no-run",
+        "${input:module}",
+        "${input:maven-profiles}"
+      ],
+      "options": {
+        "env": {
+          "SPRING_PROFILES_ACTIVE": "${input:spring-profile}"
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": ["$func-java-watch"]
+    },
+    {
+      "label": "build-and-run-module",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "./.scripts/build.sh",
+        "do-build",
+        "do-run",
+        "${input:module}",
+        "${input:maven-profiles}"
+      ],
+      "options": {
+        "env": {
+          "SPRING_PROFILES_ACTIVE": "${input:spring-profile}"
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": ["$func-java-watch"]
+    },
+    {
+      "label": "run-module",
+      "type": "shell",
+      "command": "sh",
+      "args": ["./.scripts/build.sh", "no-build", "do-run", "${input:module}"],
+      "options": {
+        "env": {
+          "SPRING_PROFILES_ACTIVE": "${input:spring-profile}"
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": ["$func-java-watch"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "module",
+      "description": "Maven Sub-Module:",
+      "options": [
+        "money-transfer",
+        "simple-console-app",
+        "dummy-beans",
+        "jdbc-console-app",
+        "spring-jdbc-console-app",
+        "spring-guru",
+        "test-something-app"
+      ],
+      "default": "test-something-app",
+      "type": "pickString"
+    },
+    {
+      "id": "maven-profiles",
+      "description": "Maven Profiles (comma-delimited list):",
+      "default": "default",
+      "type": "promptString"
+    },
+    {
+      "id": "spring-profile",
+      "description": "Spring Active Profile:",
+      "default": "default",
+      "type": "promptString"
+    }
+  ]
+}
