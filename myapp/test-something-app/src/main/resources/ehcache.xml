@@ -1,0 +1,36 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ehcache.org/v3" xmlns:jsr107="http://www.ehcache.org/v3/jsr107" xsi:schemaLocation="
+            http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd
+            http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
+
+	<persistence directory="./.cache" />
+
+	<cache-template name="default">
+		<expiry>
+			<ttl unit="seconds">30</ttl>
+		</expiry>
+
+		<listeners>
+			<listener>
+				<class>com.learn.caching.CacheEventLogger</class>
+				<event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+				<event-ordering-mode>UNORDERED</event-ordering-mode>
+				<events-to-fire-on>CREATED</events-to-fire-on>
+				<events-to-fire-on>EXPIRED</events-to-fire-on>
+				<events-to-fire-on>EVICTED</events-to-fire-on>
+			</listener>
+		</listeners>
+
+		<resources>
+			<heap unit="entries">2</heap>
+			<offheap unit="MB">10</offheap>
+			<disk persistent="true" unit="MB">20</disk>
+		</resources>
+	</cache-template>
+
+	<cache alias="libraries" uses-template="default">
+		<key-type>java.lang.String</key-type>
+		<value-type>com.learn.caching.domain.Library</value-type>
+		<listeners dispatcher-thread-pool="twoConcurrentPools" />
+		<disk-store-settings thread-pool="twoConcurrentPools" writer-concurrency="2" />
+	</cache>
+</config>

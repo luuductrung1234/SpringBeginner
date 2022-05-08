@@ -1,0 +1,8 @@
+my:
+  cache:
+    persistence:
+      directory: ./target/cache
+spring:
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
